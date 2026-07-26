@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المشاريع المنفذة والعقود | شركة نسل الأعمال المحدودة للتجارة والمقاولات</title>
+    <meta name="description" content="استعرض سجل إنجازات ومشاريع شركة نسل الأعمال المحدودة: مطار جيزان الدولي، محطات التحلية، جامعة تربة، ونادي العرض الرياضي بالقويعية.">
+    <meta name="keywords" content="سجل الأعمال, مشاريع السعودية, مطار جيزان, محطات التحلية, شركة نسل الأعمال">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navigation Bar -->
+    <header class="site-header" id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-badge">NSL</div>
+                <div class="brand-text">
+                    <span class="brand-title" data-ar="نســل الأعمــال" data-en="NASL BUSINESS">نســل الأعمــال</span>
+                    <span class="brand-sub" data-ar="للتجارة والمقاولات المحدودة" data-en="For Trading & Contracting Ltd">للتجارة والمقاولات المحدودة</span>
+                </div>
+            </a>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="nav-link" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                    <li><a href="about.html" class="nav-link" data-ar="عن الشركة" data-en="About Us">عن الشركة</a></li>
+                    <li><a href="services.html" class="nav-link" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+                    <li><a href="gallery.html" class="nav-link" data-ar="معرض الصور" data-en="Gallery">معرض الصور</a></li>
+                    <li><a href="projects.html" class="nav-link active" data-ar="المشاريع المنفذة" data-en="Projects">المشاريع المنفذة</a></li>
+                    <li><a href="contact.html" class="nav-link" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="lang-toggle-btn" id="langToggle" aria-label="Toggle Language">
+                    <i class="fa-solid me-1 fa-globe"></i> <span id="langText">English</span>
+                </button>
+                <a href="contact.html" class="btn btn-primary btn-sm btn-glow" data-ar="طلب عرض سعر" data-en="Request Quote">
+                    <i class="fa-solid fa-file-signature"></i> <span>طلب عرض سعر</span>
+                </a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Open Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Subpage Hero Banner -->
+    <section class="page-banner">
+        <div class="page-banner-bg">
+            <div class="page-banner-glow page-banner-glow-1"></div>
+            <div class="page-banner-glow page-banner-glow-2"></div>
+        </div>
+        <div class="container page-banner-content">
+            <div class="breadcrumb">
+                <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+                <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-left"></i></span>
+                <span data-ar="المشاريع والعقود المنفذة" data-en="Executed Projects">المشاريع والعقود المنفذة</span>
+            </div>
+            <h1 class="page-title" data-ar="سجل العقود والمشاريع الكبرى" data-en="Major Contracts & Projects Track Record">
+                سجل العقود والمشاريع الكبرى
+            </h1>
+            <p class="page-subtitle" data-ar="نماذج حية وموثقة من المشاريع العملاقة التي نفذتها الشركة لصالح كبرى الجهات والشركات الوطنية." data-en="A portfolio of delivered mega-contracts executed for premier Saudi developers and authorities.">
+                نماذج حية وموثقة من المشاريع العملاقة التي نفذتها الشركة لصالح كبرى الجهات والشركات الوطنية.
+            </p>
+        </div>
+    </section>
+
+    <!-- Executed Projects Section -->
+    <section class="projects-section section-padding dark-bg" id="projects">
+        <div class="container">
+            <!-- Filter Tabs -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all" data-ar="الكل" data-en="All Projects">الكل</button>
+                <button class="filter-btn" data-filter="infra" data-ar="مطارات وبنية تحتية" data-en="Airports & Infra">مطارات وبنية تحتية</button>
+                <button class="filter-btn" data-filter="buildings" data-ar="مباني وفنادق وجامعات" data-en="Buildings & Universities">مباني وفنادق وجامعات</button>
+                <button class="filter-btn" data-filter="commercial" data-ar="مرافق تجارية ورياضية" data-en="Commercial & Sports">مرافق تجارية ورياضية</button>
+                <button class="filter-btn" data-filter="supply" data-ar="توريد مواد وتجهيزات" data-en="Materials & Supply">توريد مواد وتجهيزات</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="infra">
+                    <div class="project-tag-badge">مطارات وبنية تحتية</div>
+                    <h3 class="project-title" data-ar="تنفيذ أرضيات مطار جيزان الدولي" data-en="Jizan International Airport Flooring">تنفيذ أرضيات مطار جيزان الدولي</h3>
+                    <p class="project-client" data-ar="بالتعاقد مع: شركة سفاري للمقاولات (2021 - 2022)" data-en="Client: Safari Contracting (2021 - 2022)">بالتعاقد مع: شركة سفاري للمقاولات (2021 - 2022)</p>
+                    <p class="project-desc" data-ar="تنفيذ وتجهيز أرضيات مطار جيزان الدولي وفق أعلى المواصفات الفنية المعتمدة للهيئات الملكية والمطارات." data-en="Paving and finishing flooring for Jizan International Airport adhering to international aviation standards.">تنفيذ وتجهيز أرضيات مطار جيزان الدولي وفق أعلى المواصفات الفنية المعتمدة للهيئات الملكية والمطارات.</p>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="infra">
+                    <div class="project-tag-badge">مطارات وبنية تحتية</div>
+                    <h3 class="project-title" data-ar="محطات التحلية وخزانات المياه (أملج - الليث - الوجه)" data-en="Desalination Plants & Tanks (Umluj - Al-Laith - Al-Wajh)">محطات التحلية وخزانات المياه (أملج - الليث - الوجه)</h3>
+                    <p class="project-client" data-ar="بالتعاقد مع: شركة الراشد للتجارة والمقاولات (2019 - 2022)" data-en="Client: Al-Rashed Trading (2019 - 2022)">بالتعاقد مع: شركة الراشد للتجارة والمقاولات (2019 - 2022)</p>
+                    <p class="project-desc" data-ar="تنفيذ محطات ضخ وخزانات طرفية وخطوط أنابيب مياه بين المحطات والخزانات الممتدة بساحل البحر الأحمر." data-en="Execution of desalination pump stations, storage tanks, and interconnected water transmission pipelines.">تنفيذ محطات ضخ وخزانات طرفية وخطوط أنابيب مياه بين المحطات والخزانات الممتدة بساحل البحر الأحمر.</p>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="buildings">
+                    <div class="project-tag-badge">مباني وفنادق وجامعات</div>
+                    <h3 class="project-title" data-ar="تنفيذ وتشطيب جامعة تربة" data-en="Turba University Finishing & Flooring">تنفيذ وتشطيب جامعة تربة</h3>
+                    <p class="project-client" data-ar="بالتعاقد مع: شركة أضواء الخليل للمقاولات" data-en="Client: Adwaa Al Khaleej Company">بالتعاقد مع: شركة أضواء الخليل للمقاولات</p>
+                    <p class="project-desc" data-ar="تنفيذ أعمال الدهانات الداخلية والخارجية والأرضيات والياسة بمباني الجامعة." data-en="Comprehensive finishing including specialized painting, epoxy flooring, and plastering for campus buildings.">تنفيذ أعمال الدهانات الداخلية والخارجية والأرضيات والياسة بمباني الجامعة.</p>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="commercial">
+                    <div class="project-tag-badge">مرافق تجارية ورياضية</div>
+                    <h3 class="project-title" data-ar="تنفيذ نادي العرض الرياضي بالقويعية" data-en="Al-Arda Sports Club Complex">تنفيذ نادي العرض الرياضي بالقويعية</h3>
+                    <p class="project-client" data-ar="بالتعاقد مع: شركة حسان عبدالله (2014 - 2017)" data-en="Client: Hassan Abdullah Company (2014 - 2017)">بالتعاقد مع: شركة حسان عبدالله (2014 - 2017)</p>
+                    <p class="project-desc" data-ar="إنشاء ملعب كرة قدم بمواصفات معتمدة، مسابح أولمبية، مباني إدارية، وساحات ومرافق رياضية." data-en="Construction of FIFA-standard football pitch, Olympic pools, administration headquarters, and surrounding facilities.">إنشاء ملعب كرة قدم بمواصفات معتمدة، مسابح أولمبية، مباني إدارية، وساحات ومرافق رياضية.</p>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="infra">
+                    <div class="project-tag-badge">مطارات وبنية تحتية</div>
+                    <h3 class="project-title" data-ar="بنية تحتية لإسكان ضاحية الملك عبدالله بجيزان" data-en="King Abdullah Suburb Infrastructure - Jizan">بنية تحتية لإسكان ضاحية الملك عبدالله بجيزان</h3>
+                    <p class="project-client" data-ar="بالتعاقد مع: شركة صرح التقنية للمقاولات (2021 - 2022)" data-en="Client: Sarh Technical Contracting (2021 - 2022)">بالتعاقد مع: شركة صرح التقنية للمقاولات (2021 - 2022)</p>
+                    <p class="project-desc" data-ar="تنفيذ أعمال تصريف السيول وشبكات الصرف الصحي والمرافق الأساسية بالضاحية." data-en="Execution of storm water channels, main sewage networks, and infrastructure utilities.">تنفيذ أعمال تصريف السيول وشبكات الصرف الصحي والمرافق الأساسية بالضاحية.</p>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-category="supply">
+                    <div class="project-tag-badge">توريد مواد وتجهيزات</div>
+                    <h3 class="project-title" data-ar="عوازل وأرضيات مطار الملك عبدالعزيز بجدة" data-en="Jeddah Airport Waterproofing & Flooring Supply">عوازل وأرضيات مطار الملك عبدالعزيز بجدة</h3>
+                    <p class="project-client" data-ar="بالتعاقد مع: شركة القياتي وبن لادن للعزل" data-en="Client: Al-Qayati & Bin Laden Insulation">بالتعاقد مع: شركة القياتي وبن لادن للعزل</p>
+                    <p class="project-desc" data-ar="توريد المواد اللاصقة والعازلة المتخصصة لأرضيات مطار جدة بمواصفات عالية جداً." data-en="Supplying high-grade adhesive bonding and insulation materials for airport concourses.">توريد المواد اللاصقة والعازلة المتخصصة لأرضيات مطار جدة بمواصفات عالية جداً.</p>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card" data-category="buildings">
+                    <div class="project-tag-badge">مباني وفنادق وجامعات</div>
+                    <h3 class="project-title" data-ar="أكثر من 100 مبنى سكني وفنادق بمحافظة تربة" data-en="100+ Residential Buildings & Hotels">أكثر من 100 مبنى سكني وفنادق بمحافظة تربة</h3>
+                    <p class="project-client" data-ar="لصالح الأهالي وبلدية تربة (خبرة 15 عاماً)" data-en="Location: Turba Governorate (Over 15 Years)">لصالح الأهالي وبلدية تربة (خبرة 15 عاماً)</p>
+                    <p class="project-desc" data-ar="بناء وتشييد وتسليم مفتاح لأكثر من مائة مبنى سكني وفنادق كبرى وقصور أفراح ومباني المباحث والدفاع المدني." data-en="Turnkey execution of residential complexes, major hotels, wedding halls, and government civil defense buildings.">بناء وتشييد وتسليم مفتاح لأكثر من مائة مبنى سكني وفنادق كبرى وقصور أفراح ومباني المباحث والدفاع المدني.</p>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card" data-category="supply">
+                    <div class="project-tag-badge">توريد مواد وتجهيزات</div>
+                    <h3 class="project-title" data-ar="توريد مواد حديقة الملك عبدالله بالرياض" data-en="King Abdullah Park Site Materials Supply - Riyadh">توريد مواد حديقة الملك عبدالله بالرياض</h3>
+                    <p class="project-client" data-ar="بالتعاقد مع: شركة جودت للمقاولات (2012 - 2015)" data-en="Client: Jawdat Contracting Co. (2012 - 2015)">بالتعاقد مع: شركة جودت للمقاولات (2012 - 2015)</p>
+                    <p class="project-desc" data-ar="توريد مواد التأسيس وتجهيز الموقع العام لمنتزه الملك عبدالله بالرياض." data-en="Sub-base material supply and civil site preparation for King Abdullah Park in Riyadh.">توريد مواد التأسيس وتجهيز الموقع العام لمنتزه الملك عبدالله بالرياض.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Partners Section -->
+    <section class="partners-section section-padding" id="partners">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="section-tag" data-ar="شراكات استراتيجية" data-en="Strategic Alliances">شراكات استراتيجية</div>
+                <h2 class="section-title" data-ar="شركاء النجاح" data-en="Our Trusted Partners">شركاء النجاح</h2>
+                <p class="section-subtitle" data-ar="نفخر بشراكتنا وثقة كبرى الشركات والجهات الوطنية والمشاريع العملاقة بالمملكة" data-en="We take pride in our strong partnerships with Saudi Arabia's leading developers and contractors">نفخر بشراكتنا وثقة كبرى الشركات والجهات الوطنية والمشاريع العملاقة بالمملكة</p>
+            </div>
+
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-name">TROJENA</div>
+                    <div class="partner-sub">NEOM Project</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-name">Red Sea Global</div>
+                    <div class="partner-sub">البحر الأحمر الدولية</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-name">alfanar</div>
+                    <div class="partner-sub">شركة الفنار</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-name">BIN LADEN GROUP</div>
+                    <div class="partner-sub">مجموعة بن لادن</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-name">SAUDI OGER</div>
+                    <div class="partner-sub">سعودي أوجيه</div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-name">SHIBH AL JAZIRA</div>
+                    <div class="partner-sub">شبه الجزيرة للمقاولات</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <div class="logo-badge">NSL</div>
+                        <div class="brand-text">
+                            <span class="brand-title">نســل الأعمــال</span>
+                            <span class="brand-sub">للتجارة والمقاولات المحدودة</span>
+                        </div>
+                    </div>
+                    <p class="footer-desc" data-ar="شركة نسل الأعمال المحدودة للتجارة والمقاولات - شريككم الموثوق لبناء مستقبل واعد في المملكة العربية السعودية وفق رؤية 2030." data-en="NASL Business Company Ltd - Your trusted partner in building Saudi Arabia's future under Vision 2030.">
+                        شركة نسل الأعمال المحدودة للتجارة والمقاولات - شريككم الموثوق لبناء مستقبل واعد في المملكة العربية السعودية وفق رؤية 2030.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h4 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                        <li><a href="about.html" data-ar="عن الشركة" data-en="About Us">عن الشركة</a></li>
+                        <li><a href="services.html" data-ar="مجالات الأعمال" data-en="Services">مجالات الأعمال</a></li>
+                        <li><a href="gallery.html" data-ar="معرض الصور" data-en="Gallery">معرض الصور</a></li>
+                        <li><a href="projects.html" data-ar="المشاريع المنفذة" data-en="Projects">المشاريع المنفذة</a></li>
+                        <li><a href="contact.html" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4 data-ar="بيانات التواصل" data-en="Contact Detail">بيانات التواصل</h4>
+                    <p><i class="fa-solid fa-phone me-2"></i> 0559608789 / 0583579436</p>
+                    <p><i class="fa-solid fa-envelope me-2"></i> info@naslbusiness.com</p>
+                    <p><i class="fa-solid fa-globe me-2"></i> www.nslcompany.com</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-ar="جميع الحقوق محفوظة © 2026 شركة نسل الأعمال المحدودة للتجارة والمقاولات." data-en="All Rights Reserved © 2026 NASL Business Company for Trading & Contracting Ltd.">
+                    جميع الحقوق محفوظة © 2026 شركة نسل الأعمال المحدودة للتجارة والمقاولات.
+                </p>
+                <div class="footer-legal">
+                    <span>CR: 7024073715</span> | <span>VAT: 310983179700003</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Service Detail Modal -->
+    <div class="modal-backdrop" id="serviceModal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeServiceModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Direct Chat Button -->
+    <div class="whatsapp-float-container">
+        <div class="whatsapp-tooltip" data-ar="تواصل مباشر مع الإدارة عبر الواتساب" data-en="Chat Direct with Us on WhatsApp">تواصل مباشر مع الإدارة عبر الواتساب</div>
+        <a href="https://wa.me/966559608789?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B4%D8%B1%D9%83%D8%A9%20%D9%86%D8%B3%D9%84%20%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85" target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" aria-label="WhatsApp Chat">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="whatsapp-pulse-ring"></span>
+        </a>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -2,7 +2,7 @@
    NASL BUSINESS COMPANY - INTERACTIVE JAVASCRIPT LOGIC
    ========================================================================== */
 
-// --- 1. Comprehensive Service Modal Data (Extracted directly from NASL PDF) ---
+// --- 1. Comprehensive Service Modal Data (With Real Work Photos) ---
 const servicesData = {
     1: {
         titleAr: "أعمال الحفر والترحيل وتوريد المواد",
@@ -20,6 +20,12 @@ const servicesData = {
             "Precision blasting and rock breaking",
             "Trenching for utility networks, tunnels & channels",
             "Off-site soil and material haulage"
+        ],
+        images: [
+            { src: "imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM.jpeg", titleAr: "معدات الحفر والتسوية بالموقع", titleEn: "Excavation & site grading machinery" },
+            { src: "imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM (1).jpeg", titleAr: "ترحيل وتجهيز التربة بالموقع", titleEn: "Soil transfer and hauling operations" },
+            { src: "imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM (2).jpeg", titleAr: "آليات الحفر الثقيلة للمشاريع", titleEn: "Heavy excavation equipment" },
+            { src: "imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.04 AM.jpeg", titleAr: "تجهيز الموقع والوصول للأعماق", titleEn: "Deep foundation excavation site" }
         ]
     },
     2: {
@@ -38,6 +44,11 @@ const servicesData = {
             "Sub-base gravel and aggregate supply",
             "Certified steel rebar and cement supply",
             "On-time logistics adhering to project specs"
+        ],
+        images: [
+            { src: "imag/توريد المواد صبيز وبيسكورس  ورمل وحجر/WhatsApp Image 2026-07-23 at 11.49.43 AM.jpeg", titleAr: "توريد المواد الصخرية والبيسكورس", titleEn: "Base-course & aggregate supply" },
+            { src: "imag/توريد المواد صبيز وبيسكورس  ورمل وحجر/WhatsApp Image 2026-07-23 at 11.49.43 AM (1).jpeg", titleAr: "توريد مواد التأسيس والصبيز", titleEn: "Sub-base soil & material haulage" },
+            { src: "imag/توريد المواد صبيز وبيسكورس  ورمل وحجر/WhatsApp Image 2026-07-23 at 11.49.43 AM (2).jpeg", titleAr: "أسطول شاحنات توريد المواد الإنشائية", titleEn: "Construction material supply fleet" }
         ]
     },
     3: {
@@ -56,6 +67,9 @@ const servicesData = {
             "High-density asphalt laying & roller compaction",
             "Weather-resistant thermal road striping",
             "Traffic lane design, roundabouts & safety markings"
+        ],
+        images: [
+            { src: "imag/الاسفلت والطرق/WhatsApp Image 2026-07-23 at 11.49.08 AM.jpeg", titleAr: "أعمال رصف ودمك الأسفلت بالموقع", titleEn: "Asphalt paving & compaction operations" }
         ]
     },
     4: {
@@ -74,6 +88,14 @@ const servicesData = {
             "High-volume sand & processed rock production",
             "Advanced machinery ensuring continuous supply",
             "Strict adherence to environmental safety"
+        ],
+        images: [
+            { src: "imag/كسارة/crusher.png", titleAr: "كسارة أحجار ذات طاقة إنتاجية عالية", titleEn: "High-capacity stone crushing plant" },
+            { src: "imag/كسارة/8-4-1000x700.jpg.jpeg", titleAr: "موقع إنتاج البحص والمواد الصخرية", titleEn: "Aggregate & crushed stone production" },
+            { src: "imag/كسارة/mobile-crusher-in-algeria-for-aggregates.webp", titleAr: "كسارة متنقلة لتجهيز المواقع", titleEn: "Mobile stone crushing equipment" },
+            { src: "imag/كسارة/jpj.png", titleAr: "غربلة وتصنيف الأحجار والبص", titleEn: "Aggregate screening & sorting plant" },
+            { src: "imag/كسارة/images.jpg.jpeg", titleAr: "خطوط إنتاج الرمل والمواد الصخرية", titleEn: "Sand & aggregate production line" },
+            { src: "imag/كسارة/images (1).jpg.jpeg", titleAr: "تخزين وتجهيز المواد للتحميل", titleEn: "Crushed stone stockpiles" }
         ]
     },
     5: {
@@ -92,6 +114,9 @@ const servicesData = {
             "Primary water supply and sewage networks",
             "Dam construction, manholes & distribution chambers",
             "Underground power and telecom grid extensions"
+        ],
+        images: [
+            { src: "imag/الانابيب غاز وصرف صحي ومياة واتصالات وجميع المجالات/WhatsApp Image 2026-07-23 at 11.48.54 AM.jpeg", titleAr: "تمديد شبكات خطوط الأنابيب الرئيسية", titleEn: "Main utility pipeline extension" }
         ]
     },
     6: {
@@ -110,10 +135,17 @@ const servicesData = {
             "Structural retaining walls & water ponds",
             "Public park landscaping & green spaces",
             "Aesthetic & functional outdoor space design"
+        ],
+        images: [
+            { src: "imag/اللاند سكيب والهارد سكيب/WhatsApp Image 2026-07-23 at 11.46.20 AM.jpeg", titleAr: "أعمال الهاردسكيب وتنسيق الموقع", titleEn: "Outdoor hardscape & site paving" },
+            { src: "imag/اللاند سكيب والهارد سكيب/WhatsApp Image 2026-07-23 at 11.46.20 AM (1).jpeg", titleAr: "تركيب الممرات والأرضيات الجمالية", titleEn: "Pedestrian walkway paving" },
+            { src: "imag/اللاند سكيب والهارد سكيب/WhatsApp Image 2026-07-23 at 11.46.20 AM (2).jpeg", titleAr: "تنسيق الحدائق والمساحات الخضراء", titleEn: "Landscape greening & outdoor spaces" },
+            { src: "imag/اللاند سكيب والهارد سكيب/WhatsApp Image 2026-07-23 at 11.46.20 AM (3).jpeg", titleAr: "تجهيز الموقع والحدائق العامة", titleEn: "Public park landscaping & borders" },
+            { src: "imag/اللاند سكيب والهارد سكيب/WhatsApp Image 2026-07-23 at 11.46.21 AM.jpeg", titleAr: "تشطيب المساحات الخارجية والحدائق", titleEn: "Exterior landscape finishing" }
         ]
     },
     7: {
-        titleAr: "أعمال الخرسانات المسلحة",
+        titleAr: "أعمال الخرسانات المسلحة والحدادة",
         titleEn: "Reinforced Concrete & Structural Works",
         descAr: "تنفيذ أعمال الخرسانات الإنشائية كالأساسات، الجدران، الأسطح، والأعمدة باستخدام عمالة ماهرة في الحدادة والنجارة والصب، وبتطبيق كافة أنواع الشدات الإنشائية الحديثة لضمان المتانة والقوة الإنشائية المطلوبة.",
         descEn: "Structural concrete construction including deep foundations, elevated slabs, retaining columns, and shear walls executed by certified carpenters and steel fixers utilizing modern formwork systems.",
@@ -128,6 +160,14 @@ const servicesData = {
             "Columns, beams, slabs & structural walls",
             "Expert rebar fixing and formwork carpentry",
             "Advanced shuttering & high-strength concrete"
+        ],
+        images: [
+            { src: "imag/الخرسانات/images (1).jpg.jpeg", titleAr: "صب القواعد والأساسات الخرسانية", titleEn: "Concrete foundation casting" },
+            { src: "imag/الخرسانات/images.jpg.jpeg", titleAr: "هياكل الخرسانات المسلحة للمباني", titleEn: "Reinforced concrete framing" },
+            { src: "imag/الخرسانات/images (2).jpg.jpeg", titleAr: "شدات الخرسانة المسلحة والأعمدة", titleEn: "Column shuttering & formwork" },
+            { src: "imag/الخرسانات/images (3).jpg.jpeg", titleAr: "أعمال صب الأسقف والجدران الإنشائية", titleEn: "Concrete slab & wall pouring" },
+            { src: "imag/حدادة ونجارة/WhatsApp Image 2026-07-23 at 11.47.28 AM.jpeg", titleAr: "أعمال الحدادة المسلحة وتركيب الحديد", titleEn: "Rebar assembly & steel fixing" },
+            { src: "imag/حدادة ونجارة/WhatsApp Image 2026-07-23 at 11.47.29 AM.jpeg", titleAr: "تجهيز الشدات الخشبية والنجارة المسلحة", titleEn: "Formwork carpentry & framing" }
         ]
     },
     8: {
@@ -146,6 +186,9 @@ const servicesData = {
             "Fabrication of metal frames, trusses & sheds",
             "Industrial plant and commercial hangar erection",
             "High structural endurance and precise fitting"
+        ],
+        images: [
+            { src: "imag/مستودعات ومعادن/WhatsApp Image 2026-07-23 at 11.49.33 AM.jpeg", titleAr: "تركيب الهياكل المعدنية والمستودعات", titleEn: "Steel structure & warehouse erection" }
         ]
     },
     9: {
@@ -164,6 +207,11 @@ const servicesData = {
             "Gypsum board ceilings and wall accents",
             "Ceramic, marble & epoxy flooring installation",
             "Exterior facade cladding & electrical fit-out"
+        ],
+        images: [
+            { src: "imag/الديكور والدهانات/WhatsApp Image 2026-07-23 at 11.46.45 AM.jpeg", titleAr: "أعمال الدهانات والديكورات الداخلية", titleEn: "Interior paint fit-out" },
+            { src: "imag/الديكور والدهانات/WhatsApp Image 2026-07-23 at 11.46.46 AM.jpeg", titleAr: "تشطيب الواجهات والدهانات المتقدمة", titleEn: "Advanced facade finishing" },
+            { src: "imag/الديكور والدهانات/WhatsApp Image 2026-07-23 at 11.46.46 AM (1).jpeg", titleAr: "ديكورات السقف والجبس بورد", titleEn: "Gypsum board ceiling fit-out" }
         ]
     },
     10: {
@@ -182,6 +230,14 @@ const servicesData = {
             "Waterproofing for roofs, reservoirs & tunnels",
             "High resistance to UV, chemicals & weathering",
             "Long-term structural protection guarantee"
+        ],
+        images: [
+            { src: "imag/العزل والبولي يوريا/concrete-types-betonparszagros-min.jpg.jpeg", titleAr: "تطبيق العزل المائي للبنية الخرسانية", titleEn: "Concrete waterproofing membrane" },
+            { src: "imag/العزل والبولي يوريا/d1047798-4a8d-4994-b1b0-204e60677578.jpg.jpeg", titleAr: "رش مادة البولي يوريا لحماية الأسطح", titleEn: "Polyurea spray coating protection" },
+            { src: "imag/العزل والبولي يوريا/images.jpg.jpeg", titleAr: "عزل الخزانات والأسطح الخرسانية", titleEn: "Reservoir waterproofing" },
+            { src: "imag/العزل والبولي يوريا/images (1).jpg.jpeg", titleAr: "طبقات العزل الحامي من التسربات", titleEn: "Protective insulation layer" },
+            { src: "imag/العزل والبولي يوريا/images (2).jpg.jpeg", titleAr: "اختبار كفاءة وسماكة مادة العزل", titleEn: "Waterproofing quality inspection" },
+            { src: "imag/العزل والبولي يوريا/images (4).jpg.jpeg", titleAr: "معالجة وعزل الأساسات الإنشائية", titleEn: "Foundation polyurea insulation" }
         ]
     }
 };
@@ -205,6 +261,34 @@ function openServiceModal(serviceId) {
         </li>
     `).join('');
 
+    let galleryHtml = '';
+    if (service.images && service.images.length > 0) {
+        let imgs = service.images.map(imgObj => {
+            const imgTitle = isEn ? imgObj.titleEn : imgObj.titleAr;
+            const safeTitle = imgTitle.replace(/'/g, "\\'");
+            const safeTag = title.replace(/'/g, "\\'");
+            return `
+                <div class="modal-gallery-item" onclick="openLightbox('${imgObj.src}', '${safeTitle}', '${safeTag}')">
+                    <img src="${imgObj.src}" alt="${imgTitle}" loading="lazy">
+                    <div class="modal-gallery-overlay">
+                        <i class="fa-solid fa-expand"></i>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        galleryHtml = `
+            <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-top: 1px solid var(--border-glass); padding-top: 1.25rem;">
+                <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fa-solid fa-images"></i> ${isEn ? 'Field Work Gallery & Real Photos:' : 'معرض الصور الميدانية الحية للقطاع:'}
+                </h4>
+                <div class="modal-gallery-grid">
+                    ${imgs}
+                </div>
+            </div>
+        `;
+    }
+
     modalBody.innerHTML = `
         <div style="display: inline-block; padding: 0.35rem 1rem; background: rgba(217, 155, 38, 0.15); border: 1px solid var(--border-gold); color: var(--accent-gold); border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem;">
             ${isEn ? 'NASL Specialized Sector' : 'قطاع متخصص في نسل الأعمال'}
@@ -215,11 +299,13 @@ function openServiceModal(serviceId) {
         <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 0.85rem;">
             ${isEn ? 'Key Capabilities & Technical Highlights:' : 'أبرز المقومات والمهام الفنية:'}
         </h4>
-        <ul style="list-style: none; margin-bottom: 2rem;">
+        <ul style="list-style: none; margin-bottom: 1rem;">
             ${highlightsHtml}
         </ul>
 
-        <div style="display: flex; gap: 1rem;">
+        ${galleryHtml}
+
+        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
             <a href="#contact" onclick="closeServiceModal()" class="btn btn-gold btn-block">
                 <i class="fa-solid fa-file-signature"></i> <span>${isEn ? 'Request Sector Quotation' : 'طلب تسعير لهذا القطاع'}</span>
             </a>
@@ -230,18 +316,60 @@ function openServiceModal(serviceId) {
 }
 
 function closeServiceModal() {
-    document.getElementById('serviceModal').classList.remove('active');
+    const modal = document.getElementById('serviceModal');
+    if (modal) modal.classList.remove('active');
 }
 
 // Close modal when clicking on backdrop
-document.getElementById('serviceModal').addEventListener('click', function(e) {
-    if (e.target === this) {
+const serviceModalElem = document.getElementById('serviceModal');
+if (serviceModalElem) {
+    serviceModalElem.addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeServiceModal();
+        }
+    });
+}
+
+// --- 3. Lightbox Image Viewer Modal ---
+function openLightbox(src, title, tag) {
+    const lightbox = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxTag = document.getElementById('lightboxTag');
+
+    if (!lightbox) return;
+
+    lightboxImg.src = src;
+    lightboxTitle.textContent = title || '';
+    lightboxTag.textContent = tag || 'شركة نسل الأعمال';
+
+    lightbox.classList.add('active');
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightboxModal');
+    if (lightbox) lightbox.classList.remove('active');
+}
+
+const lightboxModal = document.getElementById('lightboxModal');
+if (lightboxModal) {
+    lightboxModal.addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeLightbox();
+        }
+    });
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
         closeServiceModal();
+        closeLightbox();
     }
 });
 
-// --- 3. Project Filter Logic ---
+// --- 4. Filters & Controls Logic ---
 document.addEventListener('DOMContentLoaded', () => {
+    // Project Filter
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -249,7 +377,6 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => {
             filterBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-
             const filter = btn.getAttribute('data-filter');
 
             projectCards.forEach(card => {
@@ -262,81 +389,110 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // Gallery Filter
+    const gfilterBtns = document.querySelectorAll('.gfilter-btn');
+    const galleryCards = document.querySelectorAll('.gallery-card');
+
+    gfilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            gfilterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-gfilter');
+
+            galleryCards.forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-gcat') === filter) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.4s ease forwards';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
 });
 
-// --- 4. Language Switcher (Arabic / English) ---
+// --- 5. Language Switcher (Arabic / English) ---
 const langToggleBtn = document.getElementById('langToggle');
 const langText = document.getElementById('langText');
 
-langToggleBtn.addEventListener('click', () => {
-    const isEn = document.body.classList.contains('lang-en');
-    
-    if (isEn) {
-        // Switch to Arabic
-        document.body.classList.remove('lang-en');
-        document.documentElement.setAttribute('lang', 'ar');
-        document.documentElement.setAttribute('dir', 'rtl');
-        langText.textContent = 'English';
-    } else {
-        // Switch to English
-        document.body.classList.add('lang-en');
-        document.documentElement.setAttribute('lang', 'en');
-        document.documentElement.setAttribute('dir', 'ltr');
-        langText.textContent = 'العربية';
-    }
+if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', () => {
+        const isEn = document.body.classList.contains('lang-en');
+        
+        if (isEn) {
+            // Switch to Arabic
+            document.body.classList.remove('lang-en');
+            document.documentElement.setAttribute('lang', 'ar');
+            document.documentElement.setAttribute('dir', 'rtl');
+            langText.textContent = 'English';
+        } else {
+            // Switch to English
+            document.body.classList.add('lang-en');
+            document.documentElement.setAttribute('lang', 'en');
+            document.documentElement.setAttribute('dir', 'ltr');
+            langText.textContent = 'العربية';
+        }
 
-    // Toggle Translatable Text Elements
-    const translatable = document.querySelectorAll('[data-ar][data-en]');
-    translatable.forEach(el => {
-        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
-        el.textContent = !isEn ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+        // Toggle Translatable Text Elements
+        const translatable = document.querySelectorAll('[data-ar][data-en]');
+        translatable.forEach(el => {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
+            el.textContent = !isEn ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+        });
     });
-});
+}
 
-// --- 5. Mobile Menu Navigation ---
+// --- 6. Mobile Menu Navigation ---
 const mobileToggle = document.getElementById('mobileToggle');
 const mainNav = document.getElementById('mainNav');
 
-mobileToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('mobile-active');
-});
-
-// Close nav when link clicked
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        mainNav.classList.remove('mobile-active');
+if (mobileToggle && mainNav) {
+    mobileToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('mobile-active');
     });
-});
 
-// --- 6. Sticky Header Scroll Behavior & Active Link Highlight ---
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            mainNav.classList.remove('mobile-active');
+        });
+    });
+}
+
+// --- 7. Sticky Header & Scroll Highlight ---
 window.addEventListener('scroll', () => {
     const header = document.getElementById('header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+    if (header) {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     }
 
-    // Highlight active section nav link
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.pageYOffset;
+    const anchorNavLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+    if (anchorNavLinks.length > 0) {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollY = window.pageYOffset;
 
-    sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 120;
-        const sectionId = current.getAttribute('id');
-        const navLink = document.querySelector(`.main-nav a[href*=${sectionId}]`);
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 120;
+            const sectionId = current.getAttribute('id');
+            const navLink = document.querySelector(`.main-nav a[href="#${sectionId}"]`);
 
-        if (navLink) {
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-                navLink.classList.add('active');
+            if (navLink) {
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    navLink.classList.add('active');
+                }
             }
-        }
-    });
+        });
+    }
 });
 
-// --- 7. WhatsApp Form Handler ---
+// --- 8. WhatsApp Form Handler ---
 function handleFormSubmit(event) {
     event.preventDefault();
 
@@ -357,3 +513,30 @@ function handleFormSubmit(event) {
 
     window.open(whatsappUrl, '_blank');
 }
+
+// --- 9. Intersection Observer Scroll Reveal Animations ---
+document.addEventListener('DOMContentLoaded', () => {
+    const revealElements = document.querySelectorAll('.service-card, .project-card, .cert-card, .vvm-card, .gallery-card, .stat-card, .partner-card, .section-header');
+
+    revealElements.forEach(el => {
+        el.classList.add('reveal-init');
+    });
+
+    const observerOptions = {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
+});
