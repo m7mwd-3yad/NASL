@@ -514,17 +514,33 @@ function handleFormSubmit(event) {
     window.open(whatsappUrl, '_blank');
 }
 
-// --- 9. Intersection Observer Scroll Reveal Animations ---
+// --- 9. Advanced Intersection Observer Scroll Animations ---
 document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('.service-card, .project-card, .cert-card, .vvm-card, .gallery-card, .stat-card, .partner-card, .section-header');
+    const cards = document.querySelectorAll('.service-card, .project-card, .cert-card, .vvm-card, .gallery-card, .stat-card, .partner-card');
+    const headers = document.querySelectorAll('.section-header, .page-banner-content');
+    const sideElements = document.querySelectorAll('.about-text-content, .gm-card-wrapper, .contact-info-block, .quote-form-card');
 
-    revealElements.forEach(el => {
+    cards.forEach((el, index) => {
+        el.classList.add('reveal-init', 'reveal-scale');
+        el.classList.add(`delay-${(index % 4) + 1}`);
+    });
+
+    headers.forEach(el => {
+        el.classList.add('reveal-init', 'reveal-up');
+    });
+
+    sideElements.forEach((el, index) => {
         el.classList.add('reveal-init');
+        if (index % 2 === 0) {
+            el.classList.add('reveal-right');
+        } else {
+            el.classList.add('reveal-left');
+        }
     });
 
     const observerOptions = {
-        threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px'
     };
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -536,7 +552,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    revealElements.forEach(el => {
+    document.querySelectorAll('.reveal-init').forEach(el => {
         revealObserver.observe(el);
     });
 });
