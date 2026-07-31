@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <circle cx="35" cy="40" r="22" fill="#ff6b35" opacity="0.95"/>
+  <text x="35" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">FF</text>
+  <text x="70" y="38" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#0c1d4a">First Fix</text>
+  <text x="70" y="55" font-family="Arial, sans-serif" font-size="9" fill="#c8900a" font-weight="bold" letter-spacing="1">فرست فكس</text>
+</svg>

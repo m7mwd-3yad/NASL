@@ -256,7 +256,7 @@ function openServiceModal(serviceId) {
     const highlights = isEn ? service.highlightsEn : service.highlightsAr;
 
     let highlightsHtml = highlights.map(item => `
-        <li style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; font-size: 0.95rem; color: #cbd5e1;">
+        <li style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--primary-navy); font-weight: 600;">
             <i class="fa-solid fa-check" style="color: var(--accent-gold);"></i> ${item}
         </li>
     `).join('');
@@ -290,10 +290,10 @@ function openServiceModal(serviceId) {
     }
 
     modalBody.innerHTML = `
-        <div style="display: inline-block; padding: 0.35rem 1rem; background: rgba(217, 155, 38, 0.15); border: 1px solid var(--border-gold); color: var(--accent-gold); border-radius: 9999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1rem;">
+        <div style="display: inline-block; padding: 0.35rem 1rem; background: var(--gold-badge-bg); border: 1px solid var(--gold-badge-border); color: var(--gold-badge-text); border-radius: 9999px; font-size: 0.8rem; font-weight: 800; margin-bottom: 1rem;">
             ${isEn ? 'NASL Specialized Sector' : 'قطاع متخصص في نسل الأعمال'}
         </div>
-        <h2 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; margin-bottom: 1rem; line-height: 1.3;">${title}</h2>
+        <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 1rem; line-height: 1.3;">${title}</h2>
         <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">${desc}</p>
         
         <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 0.85rem;">
@@ -306,7 +306,7 @@ function openServiceModal(serviceId) {
         ${galleryHtml}
 
         <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-            <a href="#contact" onclick="closeServiceModal()" class="btn btn-gold btn-block">
+            <a href="contact.html" onclick="closeServiceModal()" class="btn btn-gold btn-block">
                 <i class="fa-solid fa-file-signature"></i> <span>${isEn ? 'Request Sector Quotation' : 'طلب تسعير لهذا القطاع'}</span>
             </a>
         </div>
@@ -496,10 +496,15 @@ window.addEventListener('scroll', () => {
 function handleFormSubmit(event) {
     event.preventDefault();
 
-    const name = document.getElementById('clientName').value;
-    const phone = document.getElementById('clientPhone').value;
-    const service = document.getElementById('serviceType').value;
-    const details = document.getElementById('projectDetails').value;
+    const nameInput = document.getElementById('clientName');
+    const phoneInput = document.getElementById('clientPhone');
+    const serviceInput = document.getElementById('serviceType');
+    const detailsInput = document.getElementById('projectDetails');
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    const phone = phoneInput ? phoneInput.value.trim() : '';
+    const service = serviceInput ? serviceInput.value : '';
+    const details = detailsInput ? detailsInput.value.trim() : '';
 
     const message = `مرحباً شركة نسل الأعمال للتجارة والمقاولات 👋🏼
 أود تقديم طلب عرض سعر / استشارة هندسية:
@@ -509,14 +514,63 @@ function handleFormSubmit(event) {
 • تفاصيل المشروع: ${details}`;
 
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/966559608789?text=${encodedMessage}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=966559608789&text=${encodedMessage}`;
 
-    window.open(whatsappUrl, '_blank');
+    // Direct redirection avoids popup blockers and infinite loading screens on mobile & desktop
+    window.location.href = whatsappUrl;
 }
 
-// --- 9. Advanced Intersection Observer Scroll Animations ---
+// --- 9. Advanced Intersection Observer Scroll Animations & Interactive FX ---
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.service-card, .project-card, .cert-card, .vvm-card, .gallery-card, .stat-card, .partner-card');
+    // 1. Create & Append Scroll Progress Bar
+    if (!document.getElementById('scrollProgressBar')) {
+        const progressBar = document.createElement('div');
+        progressBar.className = 'scroll-progress-bar';
+        progressBar.id = 'scrollProgressBar';
+        document.body.appendChild(progressBar);
+    }
+
+    // 2. Create & Append Floating Back-To-Top Button
+    if (!document.getElementById('backToTopBtn')) {
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.className = 'back-to-top-btn';
+        backToTopBtn.id = 'backToTopBtn';
+        backToTopBtn.setAttribute('aria-label', 'Back to Top');
+        backToTopBtn.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+        document.body.appendChild(backToTopBtn);
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Scroll Events: Progress Bar & Back To Top Visibility
+    const progressBarEl = document.getElementById('scrollProgressBar');
+    const backToTopBtnEl = document.getElementById('backToTopBtn');
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+        if (progressBarEl) {
+            progressBarEl.style.width = `${progress}%`;
+        }
+
+        if (backToTopBtnEl) {
+            if (scrollTop > 320) {
+                backToTopBtnEl.classList.add('visible');
+            } else {
+                backToTopBtnEl.classList.remove('visible');
+            }
+        }
+    });
+
+    // 3. Scroll Reveal Animations Setup
+    const cards = document.querySelectorAll('.service-card, .project-card, .rtcc-service-card, .cert-card, .vvm-card, .gallery-card, .stat-card, .partner-card');
     const headers = document.querySelectorAll('.section-header, .page-banner-content');
     const sideElements = document.querySelectorAll('.about-text-content, .gm-card-wrapper, .contact-info-block, .quote-form-card');
 
@@ -539,7 +593,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const observerOptions = {
-        threshold: 0.1,
+        threshold: 0.12,
         rootMargin: '0px 0px -30px 0px'
     };
 
@@ -555,4 +609,255 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal-init').forEach(el => {
         revealObserver.observe(el);
     });
+
+    // 4. Dynamic Stat Counter Animation
+    const counterElements = document.querySelectorAll('[data-count]');
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-count'), 10);
+                if (!isNaN(target)) {
+                    const hasPlus = el.textContent.trim().startsWith('+');
+                    let current = 0;
+                    const duration = 1800;
+                    const stepTime = 25;
+                    const steps = duration / stepTime;
+                    const increment = target / steps;
+
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        el.textContent = (hasPlus ? '+' : '') + Math.floor(current);
+                    }, stepTime);
+                }
+                observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counterElements.forEach(el => counterObserver.observe(el));
+
+    // --- 10. Interactive 3D Card Hover & Mouse Light Effect ---
+    const tiltCards = document.querySelectorAll('.hero-logo-card, .service-card, .project-card, .rtcc-service-card, .partner-card, .cert-card, .vvm-card, .stat-card, .gallery-card, .gm-card');
+    tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = ((y - centerY) / centerY) * -6;
+            const rotateY = ((x - centerX) / centerX) * 6;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px) scale(1.015)`;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)';
+        });
+    });
+
+    // --- 11. Luxury Gold Geometric Particle Canvas ---
+    const canvas = document.getElementById('heroParticleCanvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = canvas.parentElement.offsetWidth || window.innerWidth;
+        let height = canvas.height = canvas.parentElement.offsetHeight || window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            if (!canvas.parentElement) return;
+            width = canvas.width = canvas.parentElement.offsetWidth || window.innerWidth;
+            height = canvas.height = canvas.parentElement.offsetHeight || window.innerHeight;
+        });
+
+        const particles = [];
+        const particleCount = Math.min(Math.floor(width / 25), 45);
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                radius: Math.random() * 2 + 1,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                alpha: Math.random() * 0.5 + 0.2
+            });
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw connecting lines
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 130) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(212, 175, 55, ${0.15 * (1 - dist / 130)})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            // Draw glowing particles
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > width) p.vx *= -1;
+                if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(247, 215, 117, ${p.alpha})`;
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = '#d4af37';
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            });
+
+            requestAnimationFrame(drawParticles);
+        }
+
+        drawParticles();
+    }
+
+    /* --- Reusable RTCC Auto-Slider Helper --- */
+    function setupRtccSlider(trackId, viewportId, prevBtnId, nextBtnId, dotsContainerId, speedMs = 3800) {
+        const track = document.getElementById(trackId);
+        const viewport = document.getElementById(viewportId);
+        const prevBtn = document.getElementById(prevBtnId);
+        const nextBtn = document.getElementById(nextBtnId);
+        const dotsContainer = document.getElementById(dotsContainerId);
+
+        if (!track || !viewport) return;
+
+        const cards = track.children;
+        if (!cards || cards.length === 0) return;
+
+        let currentIndex = 0;
+        let autoSlideInterval = null;
+
+        function getVisibleCount() {
+            const width = window.innerWidth;
+            if (width <= 640) return 1;
+            if (width <= 1024) return 2;
+            return 3;
+        }
+
+        function getMaxIndex() {
+            return Math.max(0, cards.length - getVisibleCount());
+        }
+
+        function createDots() {
+            if (!dotsContainer) return;
+            dotsContainer.innerHTML = '';
+            const totalDots = getMaxIndex() + 1;
+
+            for (let i = 0; i < totalDots; i++) {
+                const dot = document.createElement('div');
+                dot.className = `slider-dot ${i === currentIndex ? 'active' : ''}`;
+                dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                dot.addEventListener('click', () => {
+                    goToSlide(i);
+                    resetAutoSlide();
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateDots() {
+            if (!dotsContainer) return;
+            const dots = dotsContainer.querySelectorAll('.slider-dot');
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentIndex);
+            });
+        }
+
+        function goToSlide(index) {
+            const maxIdx = getMaxIndex();
+            if (index < 0) index = maxIdx;
+            if (index > maxIdx) index = 0;
+
+            currentIndex = index;
+
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 24; // 1.5rem in px
+            const offset = currentIndex * (cardWidth + gap);
+
+            // Check if RTL or LTR
+            const isRtl = document.documentElement.dir !== 'ltr';
+            const directionMultiplier = isRtl ? 1 : -1;
+
+            track.style.transform = `translateX(${directionMultiplier * offset}px)`;
+            updateDots();
+        }
+
+        function nextSlide() {
+            goToSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+            goToSlide(currentIndex - 1);
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide();
+            autoSlideInterval = setInterval(nextSlide, speedMs);
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideInterval) clearInterval(autoSlideInterval);
+        }
+
+        function resetAutoSlide() {
+            stopAutoSlide();
+            startAutoSlide();
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetAutoSlide();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetAutoSlide();
+            });
+        }
+
+        viewport.addEventListener('mouseenter', stopAutoSlide);
+        viewport.addEventListener('mouseleave', startAutoSlide);
+
+        window.addEventListener('resize', () => {
+            createDots();
+            goToSlide(Math.min(currentIndex, getMaxIndex()));
+        });
+
+        createDots();
+        goToSlide(0);
+        startAutoSlide();
+    }
+
+    // Initialize all 3 RTCC Sliders
+    setupRtccSlider('servicesTrack', 'servicesViewport', 'svcPrevBtn', 'svcNextBtn', 'svcDotsContainer', 3600);
+    setupRtccSlider('galleryTrack', 'galleryViewport', 'galPrevBtn', 'galNextBtn', 'galDotsContainer', 4200);
+    setupRtccSlider('projectsTrack', 'projectsViewport', 'projPrevBtn', 'projNextBtn', 'projDotsContainer', 4000);
 });

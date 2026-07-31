@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=light20">
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,12 +23,8 @@
     <!-- Header / Navigation Bar -->
     <header class="site-header" id="header">
         <div class="container nav-container">
-            <a href="#hero" class="brand-logo">
-                <div class="logo-badge">NSL</div>
-                <div class="brand-text">
-                    <span class="brand-title" data-ar="نســل الأعمــال" data-en="NASL BUSINESS">نســل الأعمــال</span>
-                    <span class="brand-sub" data-ar="للتجارة والمقاولات المحدودة" data-en="For Trading & Contracting Ltd">للتجارة والمقاولات المحدودة</span>
-                </div>
+            <a href="#hero" class="brand-logo" aria-label="شركة نسل الأعمال المحدودة">
+                <img src="logo.png?v=3" alt="شركة نسل الأعمال المحدودة" class="site-logo-img">
             </a>
 
             <nav class="main-nav" id="mainNav">
@@ -59,36 +55,56 @@
     <!-- Hero Section -->
     <section class="hero-section" id="hero">
         <div class="hero-bg">
+            <canvas id="heroParticleCanvas" class="hero-particle-canvas"></canvas>
             <div class="hero-grid-overlay"></div>
             <div class="hero-glow hero-glow-1"></div>
             <div class="hero-glow hero-glow-2"></div>
         </div>
 
-        <div class="container hero-content">
-            <div class="vision-badge animate-fade-in">
-                <span class="vision-icon">🇸🇦</span>
-                <span data-ar="نُساهِم فِي تَحقِيق رُؤيَة المَملَكَة 2030" data-en="Contributing to Saudi Vision 2030">نُساهِم فِي تَحقِيق رُؤيَة المَملَكَة 2030</span>
-            </div>
+        <div class="container hero-container">
+            <div class="hero-grid">
+                <!-- Text Content Column (Right Side in RTL) -->
+                <div class="hero-text-col reveal-init reveal-right">
+                    <div class="vision-badge animate-fade-in">
+                        <span class="vision-icon">🇸🇦</span>
+                        <span data-ar="نُساهِم فِي تَحقِيق رُؤيَة المَملَكَة 2030" data-en="Contributing to Saudi Vision 2030">نُساهِم فِي تَحقِيق رُؤيَة المَملَكَة 2030</span>
+                    </div>
 
-            <h1 class="hero-title animate-up" data-ar="ريـادة واحتـرافـية فِي عـالـم المقـاولات والبـنـية التحـتيـة" data-en="Leadership & Excellence in Construction and Infrastructure">
-                ريـادة واحتـرافـية فِي عـالـم المقـاولات والبـنـية التحـتيـة
-            </h1>
+                    <h1 class="hero-title animate-up" data-ar="ريـادة واحتـرافـية فِي عـالـم المقـاولات والبـنـية التحـتيـة" data-en="Leadership & Excellence in Construction and Infrastructure">
+                        ريـادة واحتـرافـية فِي عـالـم المقـاولات والبـنـية التحـتيـة
+                    </h1>
 
-            <p class="hero-subtitle animate-up-delay" data-ar="شركة نسل الأعمال المحدودة للتجارة والمقاولات تقدم حلولاً هندسية وتنفيذية متكاملة للمشاريع السكنية، التجارية، والصناعية بأعلى معايير الجودة والسلامة العالمية." data-en="NASL Business Company Ltd delivers integrated engineering and contracting solutions for residential, commercial, and industrial mega-projects adhering to global quality and safety standards.">
-                شركة نسل الأعمال المحدودة للتجارة والمقاولات تقدم حلولاً هندسية وتنفيذية متكاملة للمشاريع السكنية، التجارية، والصناعية بأعلى معايير الجودة والسلامة العالمية.
-            </p>
+                    <p class="hero-subtitle animate-up-delay" data-ar="شركة نسل الأعمال المحدودة للتجارة والمقاولات تقدم حلولاً هندسية وتنفيذية متكاملة للمشاريع السكنية، التجارية، والصناعية بأعلى معايير الجودة والسلامة العالمية." data-en="NASL Business Company Ltd delivers integrated engineering and contracting solutions for residential, commercial, and industrial mega-projects adhering to global quality and safety standards.">
+                        شركة نسل الأعمال المحدودة للتجارة والمقاولات تقدم حلولاً هندسية وتنفيذية متكاملة للمشاريع السكنية، التجارية، والصناعية بأعلى معايير الجودة والسلامة العالمية.
+                    </p>
 
-            <div class="hero-cta animate-up-delay-2">
-                <a href="#services" class="btn btn-gold btn-lg btn-glow" data-ar="استكشف خدماتنا التخصصية" data-en="Explore Our Services">
-                    <i class="fa-solid fa-cubes"></i> <span>استكشف خدماتنا التخصصية</span>
-                </a>
-                <a href="#projects" class="btn btn-outline btn-lg" data-ar="عرض سابقة الأعمال" data-en="View Projects Portfolio">
-                    <i class="fa-solid fa-city"></i> <span>عرض سابقة الأعمال</span>
-                </a>
+                    <div class="hero-cta animate-up-delay-2">
+                        <a href="#services" class="btn btn-gold btn-lg btn-glow" data-ar="استكشف خدماتنا التخصصية" data-en="Explore Our Services">
+                            <i class="fa-solid fa-cubes"></i> <span>استكشف خدماتنا التخصصية</span>
+                        </a>
+                        <a href="#projects" class="btn btn-outline btn-lg" data-ar="عرض سابقة الأعمال" data-en="View Projects Portfolio">
+                            <i class="fa-solid fa-city"></i> <span>عرض سابقة الأعمال</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Animated 3D Logo Showcase Column (Left Side in RTL) -->
+                <div class="hero-visual-col reveal-init reveal-left">
+                    <div class="hero-logo-card">
+                        <div class="logo-card-glow"></div>
+                        <div class="logo-card-ring"></div>
+                        <div class="logo-card-ring ring-outer"></div>
+                        <img src="logo.png?v=3" alt="شركة نسل الأعمال المحدودة" class="hero-featured-logo">
+                        <div class="logo-badge-floating">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span data-ar="شركة سعودية معتمدة 100%" data-en="100% Certified Saudi Co.">شركة سعودية معتمدة 100%</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Stats Bar -->
-            <div class="stats-grid">
+            <div class="stats-grid reveal-init reveal-up delay-2">
                 <div class="stat-card">
                     <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
                     <div class="stat-info">
@@ -217,568 +233,616 @@
         </div>
     </section>
 
-    <!-- Business Services Section -->
+    <!-- Business Services Section (RTCC-Style Auto-Sliding Carousel) -->
     <section class="services-section section-padding" id="services">
         <div class="container">
-            <div class="section-header text-center">
-                <div class="section-tag" data-ar="خدمات الشركة التخصصية" data-en="Specialized Services">خدمات الشركة التخصصية</div>
-                <h2 class="section-title" data-ar="مجالات أعمال نسل الأعمال" data-en="Company Business Areas">مجالات أعمال نسل الأعمال</h2>
-                <p class="section-subtitle" data-ar="منظومة متكاملة من الخدمات الهندسية والإنشائية المنفذة بمهارية واحترافية عالية" data-en="Integrated engineering and construction services executed with elite precision">منظومة متكاملة من الخدمات الهندسية والإنشائية المنفذة بمهارية واحترافية عالية</p>
-            </div>
+            <div class="services-rtcc-layout">
+                <!-- Text Intro Column -->
+                <div class="services-intro-col">
+                    <div class="section-tag" data-ar="مجالات الأعمال" data-en="Business Areas">مجالات الأعمال</div>
+                    <h2 class="section-title" data-ar="مجالات العمل والخدمات التخصصية" data-en="Specialized Business Areas">
+                        مجالات العمل والخدمات التخصصية
+                    </h2>
+                    <p class="services-intro-desc" data-ar="استطاعت شركة نسل الأعمال المحدودة للتجارة والمقاولات المشاركة في معظم المشاريع الإنشائية والبنية التحتية الرائدة بالمملكة، وتوفر حلولاً هندسية وتنفيذية متكاملة للمشاريع السكنية والتجارية والصناعية وفق رؤية 2030." data-en="NASL Business Company Ltd has participated in major pioneering contracting & infrastructure projects across Saudi Arabia under Vision 2030.">
+                        استطاعت شركة نسل الأعمال المحدودة للتجارة والمقاولات المشاركة في معظم المشاريع الإنشائية والبنية التحتية الرائدة بالمملكة، وتوفر حلولاً هندسية وتنفيذية متكاملة للمشاريع السكنية والتجارية والصناعية وفق رؤية 2030.
+                    </p>
 
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-card" data-service="1">
-                    <div class="service-card-thumb">
-                        <img src="imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM.jpeg" alt="أعمال الحفر والترحيل" loading="lazy">
-                        <div class="thumb-overlay"></div>
-                        <span class="photo-count-badge" data-ar="📸 4 صور ميدانية" data-en="📸 4 Field Photos"><i class="fa-solid fa-camera"></i> 4 صور ميدانية</span>
-                    </div>
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fa-solid fa-shredder"></i></div>
-                        <h3 class="service-title" data-ar="أعمال الحفر والترحيل" data-en="Excavation & Earthworks">أعمال الحفر والترحيل</h3>
-                        <p class="service-desc" data-ar="أعمال الحفر، ترحيل التربة، تجهيز المواقع، والتفجير الهندسي للوصول لأعماق التأسيس وحفر شبكات المياه والكهرباء." data-en="Site excavation, soil transfer, site preparation, and precision blasting for deep foundations and utility lines.">
-                            أعمال الحفر، ترحيل التربة، تجهيز المواقع، والتفجير الهندسي للوصول لأعماق التأسيس وحفر شبكات المياه والكهرباء.
-                        </p>
-                        <button class="service-link-btn" onclick="openServiceModal(1)">
-                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
-                        </button>
+                    <div class="services-intro-actions">
+                        <a href="services.html" class="btn btn-gold btn-glow" data-ar="استكشف جميع الخدمات" data-en="Explore All Services">
+                            <span>استكشف جميع الخدمات</span> <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                        <div class="slider-arrows">
+                            <button class="slider-arrow-btn" id="svcPrevBtn" aria-label="Previous Slide"><i class="fa-solid fa-chevron-right"></i></button>
+                            <button class="slider-arrow-btn" id="svcNextBtn" aria-label="Next Slide"><i class="fa-solid fa-chevron-left"></i></button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="service-card" data-service="2">
-                    <div class="service-card-thumb">
-                        <img src="imag/توريد المواد صبيز وبيسكورس  ورمل وحجر/WhatsApp Image 2026-07-23 at 11.49.43 AM.jpeg" alt="أعمال توريد المواد" loading="lazy">
-                        <div class="thumb-overlay"></div>
-                        <span class="photo-count-badge" data-ar="📸 3 صور ميدانية" data-en="📸 3 Field Photos"><i class="fa-solid fa-camera"></i> 3 صور ميدانية</span>
-                    </div>
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
-                        <h3 class="service-title" data-ar="أعمال توريد المواد" data-en="Material Supply">أعمال توريد المواد</h3>
-                        <p class="service-desc" data-ar="توفير وتوريد كافة المواد الإنشائية: الرمل، البحص، تربة التأسيس، الأسفلت، الأسمنت، والحديد بمواصفات قياسية." data-en="Supplying essential raw materials: sand, gravel, base soil, asphalt, cement, and steel according to specs.">
-                            توفير وتوريد كافة المواد الإنشائية: الرمل، البحص، تربة التأسيس، الأسفلت، الأسمنت، والحديد بمواصفات قياسية.
-                        </p>
-                        <button class="service-link-btn" onclick="openServiceModal(2)">
-                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
+                <!-- Slider Viewport Column -->
+                <div class="services-slider-col">
+                    <div class="services-slider-viewport" id="servicesViewport">
+                        <div class="services-slider-track" id="servicesTrack">
+                            <!-- Card 1 -->
+                            <div class="rtcc-service-card" onclick="openServiceModal(1)">
+                                <div class="rtcc-card-img">
+                                    <img src="imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM.jpeg" alt="أعمال الحفر والترحيل" loading="lazy">
+                                    <span class="rtcc-card-badge" data-ar="📸 4 صور" data-en="📸 4 Photos">📸 4 صور</span>
+                                </div>
+                                <div class="rtcc-card-content">
+                                    <h3 class="rtcc-card-title" data-ar="أعمال الحفر والترحيل" data-en="Excavation & Earthworks">أعمال الحفر والترحيل</h3>
+                                    <p class="rtcc-card-desc" data-ar="حفر القواعد والأساسات، التفجير الهندسي، وتجهيز شبكات المياه والكهرباء." data-en="Foundation excavation, engineering blasting, and infrastructure trenching.">
+                                        حفر القواعد والأساسات، التفجير الهندسي، وتجهيز شبكات المياه والكهرباء.
+                                    </p>
+                                    <span class="rtcc-card-link" data-ar="عرض التفاصيل للمزيد" data-en="View Details">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
 
-                <!-- Service 3 -->
-                <div class="service-card" data-service="3">
-                    <div class="service-card-thumb">
-                        <img src="imag/الاسفلت والطرق/WhatsApp Image 2026-07-23 at 11.49.08 AM.jpeg" alt="أعمال الأسفلت ودهانات الطرق" loading="lazy">
-                        <div class="thumb-overlay"></div>
-                        <span class="photo-count-badge" data-ar="📸 صور ميدانية" data-en="📸 Field Photos"><i class="fa-solid fa-camera"></i> صور ميدانية</span>
-                    </div>
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fa-solid fa-road"></i></div>
-                        <h3 class="service-title" data-ar="أعمال الأسفلت ودهانات الطرق" data-en="Asphalt & Road Painting">أعمال الأسفلت ودهانات الطرق</h3>
-                        <p class="service-desc" data-ar="تجهيز ورش MC1/RC2، فرش وتراكم الأسفلت، وتخطيط الطرق والمدارات بالدهانات الحرارية المقاومة." data-en="Asphalt paving with MC1/RC2 priming, compaction, road marking, and thermal safety line painting.">
-                            تجهيز ورش MC1/RC2، فرش وتراكم الأسفلت، وتخطيط الطرق والمدارات بالدهانات الحرارية المقاومة.
-                        </p>
-                        <button class="service-link-btn" onclick="openServiceModal(3)">
-                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
+                            <!-- Card 2 -->
+                            <div class="rtcc-service-card" onclick="openServiceModal(2)">
+                                <div class="rtcc-card-img">
+                                    <img src="imag/توريد المواد صبيز وبيسكورس  ورمل وحجر/WhatsApp Image 2026-07-23 at 11.49.43 AM.jpeg" alt="أعمال توريد المواد" loading="lazy">
+                                    <span class="rtcc-card-badge" data-ar="📸 3 صور" data-en="📸 3 Photos">📸 3 صور</span>
+                                </div>
+                                <div class="rtcc-card-content">
+                                    <h3 class="rtcc-card-title" data-ar="أعمال توريد المواد الإنشائية" data-en="Materials Supply">أعمال توريد المواد الإنشائية</h3>
+                                    <p class="rtcc-card-desc" data-ar="توفير وتوريد الرمل، البحص، تربة التأسيس الصبيز، والبيسكورس والحديد." data-en="Supplying raw construction materials: sand, aggregate, base course & steel.">
+                                        توفير وتوريد الرمل، البحص، تربة التأسيس الصبيز، والبيسكورس والحديد.
+                                    </p>
+                                    <span class="rtcc-card-link" data-ar="عرض التفاصيل للمزيد" data-en="View Details">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
 
-                <!-- Service 4 -->
-                <div class="service-card" data-service="4">
-                    <div class="service-card-thumb">
-                        <img src="imag/كسارة/crusher.png" alt="إنتاج المواد - كسارة الأحجار" loading="lazy">
-                        <div class="thumb-overlay"></div>
-                        <span class="photo-count-badge" data-ar="📸 6 صور ميدانية" data-en="📸 6 Field Photos"><i class="fa-solid fa-camera"></i> 6 صور ميدانية</span>
-                    </div>
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fa-solid fa-mountain"></i></div>
-                        <h3 class="service-title" data-ar="إنتاج المواد - كسارة الأحجار" data-en="Stone Crusher & Production">إنتاج المواد - كسارة الأحجار</h3>
-                        <p class="service-desc" data-ar="وحدة متخصصة في تكسير الأحجار وإنتاج البحص والرمل والمواد الصخرية بأحدث تقنيات الكسارات." data-en="Specialized stone crushing unit producing high-grade aggregate, sand, and rock material for infrastructure.">
-                            وحدة متخصصة في تكسير الأحجار وإنتاج البحص والرمل والمواد الصخرية بأحدث تقنيات الكسارات.
-                        </p>
-                        <button class="service-link-btn" onclick="openServiceModal(4)">
-                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
+                            <!-- Card 3 -->
+                            <div class="rtcc-service-card" onclick="openServiceModal(3)">
+                                <div class="rtcc-card-img">
+                                    <img src="imag/الاسفلت والطرق/WhatsApp Image 2026-07-23 at 11.49.08 AM.jpeg" alt="أعمال الأسفلت وطرق" loading="lazy">
+                                    <span class="rtcc-card-badge" data-ar="📸 صور ميدانية" data-en="📸 Field Photos">📸 صور ميدانية</span>
+                                </div>
+                                <div class="rtcc-card-content">
+                                    <h3 class="rtcc-card-title" data-ar="أعمال الأسفلت ودهانات الطرق" data-en="Asphalt & Road Paving">أعمال الأسفلت ودهانات الطرق</h3>
+                                    <p class="rtcc-card-desc" data-ar="رش MC1/RC2، رصف الأسفلت بالدكاكات، والتخطيط بالدهانات الحرارية المقاومة." data-en="MC1/RC2 prime coat, asphalt compaction, and thermal traffic markings.">
+                                        رش MC1/RC2، رصف الأسفلت بالدكاكات، والتخطيط بالدهانات الحرارية المقاومة.
+                                    </p>
+                                    <span class="rtcc-card-link" data-ar="عرض التفاصيل للمزيد" data-en="View Details">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
 
-                <!-- Service 5 -->
-                <div class="service-card" data-service="5">
-                    <div class="service-card-thumb">
-                        <img src="imag/الانابيب غاز وصرف صحي ومياة واتصالات وجميع المجالات/WhatsApp Image 2026-07-23 at 11.48.54 AM.jpeg" alt="أعمال البنية التحتية" loading="lazy">
-                        <div class="thumb-overlay"></div>
-                        <span class="photo-count-badge" data-ar="📸 صور ميدانية" data-en="📸 Field Photos"><i class="fa-solid fa-camera"></i> صور ميدانية</span>
-                    </div>
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
-                        <h3 class="service-title" data-ar="أعمال البنية التحتية" data-en="Infrastructure Works">أعمال البنية التحتية</h3>
-                        <p class="service-desc" data-ar="تمديد شبكات المياه، الصرف، الكهرباء، الاتصالات، مد أنابيب GRP/HDPE/PVC/DI، والسدود والخزانات." data-en="Laying GRP, HDPE, PVC, DI pipelines, water/sewage networks, electrical grids, telecom, and dams.">
-                            تمديد شبكات المياه، الصرف، الكهرباء، الاتصالات، مد أنابيب GRP/HDPE/PVC/DI، والسدود والخزانات.
-                        </p>
-                        <button class="service-link-btn" onclick="openServiceModal(5)">
-                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
+                            <!-- Card 4 -->
+                            <div class="rtcc-service-card" onclick="openServiceModal(4)">
+                                <div class="rtcc-card-img">
+                                    <img src="imag/كسارة/crusher.png" alt="كسارة الأحجار" loading="lazy">
+                                    <span class="rtcc-card-badge" data-ar="📸 6 صور" data-en="📸 6 Photos">📸 6 صور</span>
+                                </div>
+                                <div class="rtcc-card-content">
+                                    <h3 class="rtcc-card-title" data-ar="إنتاج المواد - كسارة الأحجار" data-en="Stone Crusher Unit">إنتاج المواد - كسارة الأحجار</h3>
+                                    <p class="rtcc-card-desc" data-ar="تكسير الأحجار وإنتاج البحص والرمل والمواد الصخرية بالطاقات الإنتاجية العالية." data-en="High-capacity stone crushing, aggregate grading, and sand production.">
+                                        تكسير الأحجار وإنتاج البحص والرمل والمواد الصخرية بالطاقات الإنتاجية العالية.
+                                    </p>
+                                    <span class="rtcc-card-link" data-ar="عرض التفاصيل للمزيد" data-en="View Details">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
 
-                <!-- Service 6 -->
-                <div class="service-card" data-service="6">
-                    <div class="service-card-thumb">
-                        <img src="imag/اللاند سكيب والهارد سكيب/WhatsApp Image 2026-07-23 at 11.46.20 AM.jpeg" alt="الهاردسكيب والاندسكيب" loading="lazy">
-                        <div class="thumb-overlay"></div>
-                        <span class="photo-count-badge" data-ar="📸 5 صور ميدانية" data-en="📸 5 Field Photos"><i class="fa-solid fa-camera"></i> 5 صور ميدانية</span>
-                    </div>
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fa-solid fa-tree"></i></div>
-                        <h3 class="service-title" data-ar="الهاردسكيب والاندسكيب" data-en="Hardscape & Landscape">الهاردسكيب والاندسكيب</h3>
-                        <p class="service-desc" data-ar="تصميم وتنفيذ عناصر المساحات الخارجية من أرصفة، جدران استنادية، برك مائية، وتنسيق الحدائق." data-en="Designing and installing hardscape features including retaining walls, walkways, water features, and parks.">
-                            تصميم وتنفيذ عناصر المساحات الخارجية من أرصفة، جدران استنادية، برك مائية، وتنسيق الحدائق.
-                        </p>
-                        <button class="service-link-btn" onclick="openServiceModal(6)">
-                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
+                            <!-- Card 5 -->
+                            <div class="rtcc-service-card" onclick="openServiceModal(5)">
+                                <div class="rtcc-card-img">
+                                    <img src="imag/الانابيب غاز وصرف صحي ومياة واتصالات وجميع المجالات/WhatsApp Image 2026-07-23 at 11.48.54 AM.jpeg" alt="أعمال البنية التحتية" loading="lazy">
+                                    <span class="rtcc-card-badge" data-ar="📸 صور ميدانية" data-en="📸 Field Photos">📸 صور ميدانية</span>
+                                </div>
+                                <div class="rtcc-card-content">
+                                    <h3 class="rtcc-card-title" data-ar="أعمال البنية التحتية والأنابيب" data-en="Infrastructure & Piping">أعمال البنية التحتية والأنابيب</h3>
+                                    <p class="rtcc-card-desc" data-ar="تمديد شبكات المياه والصرف والكهرباء والاتصالات وأنابيب GRP/HDPE." data-en="GRP/HDPE pipe laying, water supply, sewage networks & power grids.">
+                                        تمديد شبكات المياه والصرف والكهرباء والاتصالات وأنابيب GRP/HDPE.
+                                    </p>
+                                    <span class="rtcc-card-link" data-ar="عرض التفاصيل للمزيد" data-en="View Details">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
 
-                <!-- Service 7 -->
-                <div class="service-card" data-service="7">
-                    <div class="service-card-thumb">
-                        <img src="imag/الخرسانات/images (1).jpg.jpeg" alt="أعمال الخرسانات المسلحة" loading="lazy">
-                        <div class="thumb-overlay"></div>
-                        <span class="photo-count-badge" data-ar="📸 6 صور ميدانية" data-en="📸 6 Field Photos"><i class="fa-solid fa-camera"></i> 6 صور ميدانية</span>
-                    </div>
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fa-solid fa-trowel-bricks"></i></div>
-                        <h3 class="service-title" data-ar="أعمال الخرسانات المسلحة" data-en="Reinforced Concrete Works">أعمال الخرسانات المسلحة</h3>
-                        <p class="service-desc" data-ar="صب الأساسات، الجدران المسلحة، الأعمدة، والأسطح باستخدام أحدث الشدات والعمالة الماهرة." data-en="Structural concrete works covering foundations, columns, slabs, and walls using advanced formwork.">
-                            صب الأساسات، الجدران المسلحة، الأعمدة، والأسطح باستخدام أحدث الشدات والعمالة الماهرة.
-                        </p>
-                        <button class="service-link-btn" onclick="openServiceModal(7)">
-                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
+                            <!-- Card 6 -->
+                            <div class="rtcc-service-card" onclick="openServiceModal(6)">
+                                <div class="rtcc-card-img">
+                                    <img src="imag/اللاند سكيب والهارد سكيب/WhatsApp Image 2026-07-23 at 11.46.20 AM.jpeg" alt="اللاندسكيب والهاردسكيب" loading="lazy">
+                                    <span class="rtcc-card-badge" data-ar="📸 5 صور" data-en="📸 5 Photos">📸 5 صور</span>
+                                </div>
+                                <div class="rtcc-card-content">
+                                    <h3 class="rtcc-card-title" data-ar="الهاردسكيب والاندسكيب" data-en="Hardscape & Landscape">الهاردسكيب والاندسكيب</h3>
+                                    <p class="rtcc-card-desc" data-ar="تنسيق وتطوير المساحات الخارجية، الجدران الاستنادية والحدائق." data-en="Hardscape installation, landscaping, retaining walls & park plazas.">
+                                        تنسيق وتطوير المساحات الخارجية، الجدران الاستنادية والحدائق.
+                                    </p>
+                                    <span class="rtcc-card-link" data-ar="عرض التفاصيل للمزيد" data-en="View Details">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
 
-                <!-- Service 8 -->
-                <div class="service-card" data-service="8">
-                    <div class="service-card-thumb">
-                        <img src="imag/مستودعات ومعادن/WhatsApp Image 2026-07-23 at 11.49.33 AM.jpeg" alt="الهياكل المعدنية والمستودعات" loading="lazy">
-                        <div class="thumb-overlay"></div>
-                        <span class="photo-count-badge" data-ar="📸 صور ميدانية" data-en="📸 Field Photos"><i class="fa-solid fa-camera"></i> صور ميدانية</span>
-                    </div>
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fa-solid fa-warehouse"></i></div>
-                        <h3 class="service-title" data-ar="الهياكل المعدنية والمستودعات" data-en="Steel Structures & Sheds">الهياكل المعدنية والمستودعات</h3>
-                        <p class="service-desc" data-ar="تصميم وتصنيع الهياكل الحديدية، الجسور، الإطارات المعدنية، والمظلات للمستودعات والمنشآت." data-en="Designing, fabricating, and erecting heavy steel structures, frames, metal bridges, and industrial warehouses.">
-                            تصميم وتصنيع الهياكل الحديدية، الجسور، الإطارات المعدنية، والمظلات للمستودعات والمنشآت.
-                        </p>
-                        <button class="service-link-btn" onclick="openServiceModal(8)">
-                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
+                            <!-- Card 7 -->
+                            <div class="rtcc-service-card" onclick="openServiceModal(7)">
+                                <div class="rtcc-card-img">
+                                    <img src="imag/الخرسانات/images (1).jpg.jpeg" alt="الخرسانات المسلحة" loading="lazy">
+                                    <span class="rtcc-card-badge" data-ar="📸 6 صور" data-en="📸 6 Photos">📸 6 صور</span>
+                                </div>
+                                <div class="rtcc-card-content">
+                                    <h3 class="rtcc-card-title" data-ar="أعمال الخرسانات المسلحة" data-en="Concrete & Formwork">أعمال الخرسانات المسلحة</h3>
+                                    <p class="rtcc-card-desc" data-ar="صب الأساسات والقواعد والجدران المسلحة بالشدات الهندسية الحديثة." data-en="Structural concrete pouring, foundation slabs & heavy formwork.">
+                                        صب الأساسات والقواعد والجدران المسلحة بالشدات الهندسية الحديثة.
+                                    </p>
+                                    <span class="rtcc-card-link" data-ar="عرض التفاصيل للمزيد" data-en="View Details">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
 
-                <!-- Service 9 -->
-                <div class="service-card" data-service="9">
-                    <div class="service-card-thumb">
-                        <img src="imag/الديكور والدهانات/WhatsApp Image 2026-07-23 at 11.46.45 AM.jpeg" alt="أعمال التشطيبات والديكور" loading="lazy">
-                        <div class="thumb-overlay"></div>
-                        <span class="photo-count-badge" data-ar="📸 3 صور ميدانية" data-en="📸 3 Field Photos"><i class="fa-solid fa-camera"></i> 3 صور ميدانية</span>
-                    </div>
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fa-solid fa-paint-roller"></i></div>
-                        <h3 class="service-title" data-ar="أعمال التشطيبات والديكور" data-en="Fit-Out & Interior Finishing">أعمال التشطيبات والديكور</h3>
-                        <p class="service-desc" data-ar="تنفيذ الدهانات، أعمال الجبس، السيراميك، الواجهات الخارجية، والإضاءة بأعلى معايير الإتقان." data-en="Interior and exterior fit-out including gypsum works, high-grade flooring, plastering, and facades.">
-                            تنفيذ الدهانات، أعمال الجبس، السيراميك، الواجهات الخارجية، والإضاءة بأعلى معايير الإتقان.
-                        </p>
-                        <button class="service-link-btn" onclick="openServiceModal(9)">
-                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                    </div>
-                </div>
+                            <!-- Card 8 -->
+                            <div class="rtcc-service-card" onclick="openServiceModal(8)">
+                                <div class="rtcc-card-img">
+                                    <img src="imag/مستودعات ومعادن/WhatsApp Image 2026-07-23 at 11.49.33 AM.jpeg" alt="الهياكل المعدنية والمستودعات" loading="lazy">
+                                    <span class="rtcc-card-badge" data-ar="📸 صور ميدانية" data-en="📸 Field Photos">📸 صور ميدانية</span>
+                                </div>
+                                <div class="rtcc-card-content">
+                                    <h3 class="rtcc-card-title" data-ar="الهياكل المعدنية والمستودعات" data-en="Steel Structures & Warehouses">الهياكل المعدنية والمستودعات</h3>
+                                    <p class="rtcc-card-desc" data-ar="تصميم وتركيب الهياكل الحديدية والجسور والمظلات والمستودعات." data-en="Steel structure fabrication, heavy sheds, and industrial warehouses.">
+                                        تصميم وتركيب الهياكل الحديدية والجسور والمظلات والمستودعات.
+                                    </p>
+                                    <span class="rtcc-card-link" data-ar="عرض التفاصيل للمزيد" data-en="View Details">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
 
-                <!-- Service 10 -->
-                <div class="service-card" data-service="10">
-                    <div class="service-card-thumb">
-                        <img src="imag/العزل والبولي يوريا/concrete-types-betonparszagros-min.jpg.jpeg" alt="أعمال العزل والبولي يوريا" loading="lazy">
-                        <div class="thumb-overlay"></div>
-                        <span class="photo-count-badge" data-ar="📸 6 صور ميدانية" data-en="📸 6 Field Photos"><i class="fa-solid fa-camera"></i> 6 صور ميدانية</span>
+                            <!-- Card 9 -->
+                            <div class="rtcc-service-card" onclick="openServiceModal(10)">
+                                <div class="rtcc-card-img">
+                                    <img src="imag/العزل والبولي يوريا/concrete-types-betonparszagros-min.jpg.jpeg" alt="العزل والبولي يوريا" loading="lazy">
+                                    <span class="rtcc-card-badge" data-ar="📸 6 صور" data-en="📸 6 Photos">📸 6 صور</span>
+                                </div>
+                                <div class="rtcc-card-content">
+                                    <h3 class="rtcc-card-title" data-ar="أعمال العزل والبولي يوريا" data-en="Waterproofing & Polyurea">أعمال العزل والبولي يوريا</h3>
+                                    <p class="rtcc-card-desc" data-ar="رش مادة البولي يوريا لحماية الأسطح والخزانات من التسريبات." data-en="Advanced polyurea protective coating for waterproofing roofs & tanks.">
+                                        رش مادة البولي يوريا لحماية الأسطح والخزانات من التسريبات.
+                                    </p>
+                                    <span class="rtcc-card-link" data-ar="عرض التفاصيل للمزيد" data-en="View Details">عرض التفاصيل <i class="fa-solid fa-arrow-left"></i></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                        <h3 class="service-title" data-ar="أعمال العزل والبولي يوريا" data-en="Waterproofing & Polyurea">أعمال العزل والبولي يوريا</h3>
-                        <p class="service-desc" data-ar="حلول عزل متطورة ومقاومة للظروف الجوية الصعبة لعزل الأسطح والخزانات والأنفاق بتقنية البولي يوريا." data-en="Advanced waterproofing & polyurea protective coating solutions for roofs, reservoirs, and tunnels.">
-                            حلول عزل متطورة ومقاومة للظروف الجوية الصعبة لعزل الأسطح والخزانات والأنفاق بتقنية البولي يوريا.
-                        </p>
-                        <button class="service-link-btn" onclick="openServiceModal(10)">
-                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                    </div>
+
+                    <!-- Indicator Dots Container -->
+                    <div class="slider-dots-container" id="svcDotsContainer"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Field Work Photo Gallery Section -->
-    <section class="gallery-section section-padding dark-bg" id="gallery">
+    <!-- Field Work Photo Gallery Section (RTCC-Style Auto-Sliding Carousel) -->
+    <section class="gallery-section section-padding" id="gallery">
         <div class="container">
-            <div class="section-header text-center">
-                <div class="section-tag" data-ar="معرض الصور الميدانية" data-en="Live Field Gallery">معرض الصور الميدانية</div>
-                <h2 class="section-title light" data-ar="معرض صور أعمال وإنجازات الشركة" data-en="Company Operations & Field Gallery">معرض صور أعمال وإنجازات الشركة</h2>
-                <p class="section-subtitle light" data-ar="صور حية وموثقة من واقع مشاريعنا في الكسارات، الحفر والترحيل، الأسفلت، البنية التحتية، والعزل" data-en="Live field photo documentation from our job sites, heavy fleet, stone crushers, paving, and polyurea works">صور حية وموثقة من واقع مشاريعنا في الكسارات، الحفر والترحيل، الأسفلت، البنية التحتية، والعزل</p>
-            </div>
+            <div class="services-rtcc-layout">
+                <!-- Text Intro Column -->
+                <div class="services-intro-col">
+                    <div class="section-tag" data-ar="معرض الصور الميدانية" data-en="Live Field Gallery">معرض الصور الميدانية</div>
+                    <h2 class="section-title" data-ar="معرض صور أعمال وإنجازات الشركة" data-en="Company Operations Gallery">
+                        معرض صور أعمال وإنجازات الشركة
+                    </h2>
+                    <p class="services-intro-desc" data-ar="صور حية وموثقة من واقع مشاريعنا الميدانية في الكسارات، الحفر والترحيل، رصف الأسفلت، خطوط الأنابيب، العزل المائي، والهياكل المعدنية." data-en="Live field photo documentation from our job sites, heavy fleet, stone crushers, asphalt paving, pipelines, waterproofing & steel works.">
+                        صور حية وموثقة من واقع مشاريعنا الميدانية في الكسارات، الحفر والترحيل، رصف الأسفلت، خطوط الأنابيب، العزل المائي، والهياكل المعدنية.
+                    </p>
 
-            <!-- Gallery Filter Buttons -->
-            <div class="gallery-filters">
-                <button class="gfilter-btn active" data-gfilter="all" data-ar="كافة الصور" data-en="All Media">كافة الصور</button>
-                <button class="gfilter-btn" data-gfilter="excavation" data-ar="الحفر والترحيل" data-en="Excavation">الحفر والترحيل</button>
-                <button class="gfilter-btn" data-gfilter="materials" data-ar="توريد المواد" data-en="Materials Supply">توريد المواد</button>
-                <button class="gfilter-btn" data-gfilter="asphalt" data-ar="الأسفلت والرصف" data-en="Asphalt & Roads">الأسفلت والرصف</button>
-                <button class="gfilter-btn" data-gfilter="crusher" data-ar="كسارة الأحجار" data-en="Stone Crusher">كسارة الأحجار</button>
-                <button class="gfilter-btn" data-gfilter="piping" data-ar="البنية التحتية" data-en="Infrastructure">البنية التحتية</button>
-                <button class="gfilter-btn" data-gfilter="concrete" data-ar="الخرسانات والحدادة" data-en="Concrete & Steel">الخرسانات والحدادة</button>
-                <button class="gfilter-btn" data-gfilter="polyurea" data-ar="العزل والبولي يوريا" data-en="Polyurea">العزل والبولي يوريا</button>
-                <button class="gfilter-btn" data-gfilter="landscape" data-ar="اللاندسكيب والهاردسكيب" data-en="Landscape">اللاندسكيب والهاردسكيب</button>
-                <button class="gfilter-btn" data-gfilter="steel" data-ar="الهياكل والمستودعات" data-en="Steel Structures">الهياكل والمستودعات</button>
-                <button class="gfilter-btn" data-gfilter="decor" data-ar="التشطيبات والدهانات" data-en="Decor & Painting">التشطيبات والدهانات</button>
-            </div>
-
-            <div class="gallery-grid" id="galleryGrid">
-                <!-- Excavation -->
-                <div class="gallery-card" data-gcat="excavation" onclick="openLightbox('imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM.jpeg', 'معدات الحفر والتسوية بالموقع', 'أعمال الحفر والترحيل')">
-                    <img src="imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM.jpeg" alt="معدات الحفر والتسوية" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">أعمال الحفر والترحيل</span>
-                        <h4 class="gallery-title">معدات الحفر والتسوية بالموقع</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="gallery-card" data-gcat="excavation" onclick="openLightbox('imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM (1).jpeg', 'ترحيل وتجهيز التربة بالموقع', 'أعمال الحفر والترحيل')">
-                    <img src="imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM (1).jpeg" alt="ترحيل التربة" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">أعمال الحفر والترحيل</span>
-                        <h4 class="gallery-title">ترحيل وتجهيز التربة بالموقع</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="gallery-card" data-gcat="excavation" onclick="openLightbox('imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM (2).jpeg', 'آليات الحفر الثقيلة للمشاريع', 'أعمال الحفر والترحيل')">
-                    <img src="imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM (2).jpeg" alt="آليات الحفر" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">أعمال الحفر والترحيل</span>
-                        <h4 class="gallery-title">آليات الحفر الثقيلة للمشاريع</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="gallery-card" data-gcat="excavation" onclick="openLightbox('imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.04 AM.jpeg', 'تجهيز الموقع والوصول للأعماق', 'أعمال الحفر والترحيل')">
-                    <img src="imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.04 AM.jpeg" alt="حفر وتأسيس" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">أعمال الحفر والترحيل</span>
-                        <h4 class="gallery-title">تجهيز الموقع والوصول للأعماق</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                    <div class="services-intro-actions">
+                        <a href="gallery.html" class="btn btn-gold btn-glow" data-ar="عرض كافة المعرض الميداني" data-en="View Full Photo Gallery">
+                            <span>عرض كافة المعرض</span> <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                        <div class="slider-arrows">
+                            <button class="slider-arrow-btn" id="galPrevBtn" aria-label="Previous Slide"><i class="fa-solid fa-chevron-right"></i></button>
+                            <button class="slider-arrow-btn" id="galNextBtn" aria-label="Next Slide"><i class="fa-solid fa-chevron-left"></i></button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Crusher -->
-                <div class="gallery-card" data-gcat="crusher" onclick="openLightbox('imag/كسارة/crusher.png', 'كسارة أحجار ذات طاقة إنتاجية عالية', 'كسارة الأحجار')">
-                    <img src="imag/كسارة/crusher.png" alt="كسارة أحجار" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">كسارة الأحجار</span>
-                        <h4 class="gallery-title">كسارة أحجار ذات طاقة إنتاجية عالية</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="gallery-card" data-gcat="crusher" onclick="openLightbox('imag/كسارة/8-4-1000x700.jpg.jpeg', 'موقع إنتاج البحص والمواد الصخرية', 'كسارة الأحجار')">
-                    <img src="imag/كسارة/8-4-1000x700.jpg.jpeg" alt="إنتاج البحص" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">كسارة الأحجار</span>
-                        <h4 class="gallery-title">موقع إنتاج البحص والمواد الصخرية</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="gallery-card" data-gcat="crusher" onclick="openLightbox('imag/كسارة/mobile-crusher-in-algeria-for-aggregates.webp', 'كسارة متنقلة لتجهيز المواقع', 'كسارة الأحجار')">
-                    <img src="imag/كسارة/mobile-crusher-in-algeria-for-aggregates.webp" alt="كسارة متنقلة" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">كسارة الأحجار</span>
-                        <h4 class="gallery-title">كسارة متنقلة لتجهيز المواقع</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="gallery-card" data-gcat="crusher" onclick="openLightbox('imag/كسارة/jpj.png', 'غربلة وتصنيف الأحجار والبص', 'كسارة الأحجار')">
-                    <img src="imag/كسارة/jpj.png" alt="غربلة الأحجار" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">كسارة الأحجار</span>
-                        <h4 class="gallery-title">غربلة وتصنيف الأحجار والبص</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
+                <!-- Slider Viewport Column -->
+                <div class="services-slider-col">
+                    <div class="services-slider-viewport" id="galleryViewport">
+                        <div class="services-slider-track" id="galleryTrack">
+                            <!-- Image 1 -->
+                            <div class="rtcc-service-card" onclick="openLightbox('imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM.jpeg', 'معدات الحفر والتسوية بالموقع', 'أعمال الحفر والترحيل')">
+                                <div class="rtcc-card-img" style="height: 220px;">
+                                    <img src="imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM.jpeg" alt="معدات الحفر والتسوية" loading="lazy">
+                                    <span class="rtcc-card-badge">الحفر والترحيل</span>
+                                </div>
+                                <div class="rtcc-card-content" style="padding: 1.25rem;">
+                                    <h3 class="rtcc-card-title" style="font-size: 1.05rem;">معدات الحفر والتسوية بالموقع</h3>
+                                    <span class="rtcc-card-link"><i class="fa-solid fa-expand me-1"></i> تكبير الصورة</span>
+                                </div>
+                            </div>
 
-                <!-- Polyurea Insulation -->
-                <div class="gallery-card" data-gcat="polyurea" onclick="openLightbox('imag/العزل والبولي يوريا/concrete-types-betonparszagros-min.jpg.jpeg', 'تطبيق العزل المائي للبنية الخرسانية', 'العزل والبولي يوريا')">
-                    <img src="imag/العزل والبولي يوريا/concrete-types-betonparszagros-min.jpg.jpeg" alt="العزل المائي" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">العزل والبولي يوريا</span>
-                        <h4 class="gallery-title">تطبيق العزل المائي للبنية الخرسانية</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="gallery-card" data-gcat="polyurea" onclick="openLightbox('imag/العزل والبولي يوريا/d1047798-4a8d-4994-b1b0-204e60677578.jpg.jpeg', 'رش مادة البولي يوريا لحماية الأسطح', 'العزل والبولي يوريا')">
-                    <img src="imag/العزل والبولي يوريا/d1047798-4a8d-4994-b1b0-204e60677578.jpg.jpeg" alt="رش البولي يوريا" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">العزل والبولي يوريا</span>
-                        <h4 class="gallery-title">رش مادة البولي يوريا لحماية الأسطح</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="gallery-card" data-gcat="polyurea" onclick="openLightbox('imag/العزل والبولي يوريا/images (4).jpg.jpeg', 'معالجة وعزل الأساسات الإنشائية', 'العزل والبولي يوريا')">
-                    <img src="imag/العزل والبولي يوريا/images (4).jpg.jpeg" alt="عزل الأساسات" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">العزل والبولي يوريا</span>
-                        <h4 class="gallery-title">معالجة وعزل الأساسات الإنشائية</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
+                            <!-- Image 2 -->
+                            <div class="rtcc-service-card" onclick="openLightbox('imag/كسارة/crusher.png', 'كسارة أحجار ذات طاقة إنتاجية عالية', 'كسارة الأحجار')">
+                                <div class="rtcc-card-img" style="height: 220px;">
+                                    <img src="imag/كسارة/crusher.png" alt="كسارة أحجار" loading="lazy">
+                                    <span class="rtcc-card-badge">كسارة الأحجار</span>
+                                </div>
+                                <div class="rtcc-card-content" style="padding: 1.25rem;">
+                                    <h3 class="rtcc-card-title" style="font-size: 1.05rem;">كسارة أحجار ذات طاقة عالية</h3>
+                                    <span class="rtcc-card-link"><i class="fa-solid fa-expand me-1"></i> تكبير الصورة</span>
+                                </div>
+                            </div>
 
-                <!-- Asphalt -->
-                <div class="gallery-card" data-gcat="asphalt" onclick="openLightbox('imag/الاسفلت والطرق/WhatsApp Image 2026-07-23 at 11.49.08 AM.jpeg', 'أعمال رصف ودمك الأسفلت بالموقع', 'الأسفلت والطرق')">
-                    <img src="imag/الاسفلت والطرق/WhatsApp Image 2026-07-23 at 11.49.08 AM.jpeg" alt="أعمال الأسفلت" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">الأسفلت والطرق</span>
-                        <h4 class="gallery-title">أعمال رصف ودمك الأسفلت بالموقع</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
+                            <!-- Image 3 -->
+                            <div class="rtcc-service-card" onclick="openLightbox('imag/الاسفلت والطرق/WhatsApp Image 2026-07-23 at 11.49.08 AM.jpeg', 'أعمال رصف ودمك الأسفلت بالموقع', 'الأسفلت والطرق')">
+                                <div class="rtcc-card-img" style="height: 220px;">
+                                    <img src="imag/الاسفلت والطرق/WhatsApp Image 2026-07-23 at 11.49.08 AM.jpeg" alt="أعمال الأسفلت" loading="lazy">
+                                    <span class="rtcc-card-badge">الأسفلت والطرق</span>
+                                </div>
+                                <div class="rtcc-card-content" style="padding: 1.25rem;">
+                                    <h3 class="rtcc-card-title" style="font-size: 1.05rem;">أعمال رصف ودمك الأسفلت</h3>
+                                    <span class="rtcc-card-link"><i class="fa-solid fa-expand me-1"></i> تكبير الصورة</span>
+                                </div>
+                            </div>
 
-                <!-- Materials -->
-                <div class="gallery-card" data-gcat="materials" onclick="openLightbox('imag/توريد المواد صبيز وبيسكورس  ورمل وحجر/WhatsApp Image 2026-07-23 at 11.49.43 AM.jpeg', 'توريد المواد الصخرية والبيسكورس', 'توريد المواد')">
-                    <img src="imag/توريد المواد صبيز وبيسكورس  ورمل وحجر/WhatsApp Image 2026-07-23 at 11.49.43 AM.jpeg" alt="توريد المواد" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">توريد المواد</span>
-                        <h4 class="gallery-title">توريد المواد الصخرية والبيسكورس</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="gallery-card" data-gcat="materials" onclick="openLightbox('imag/توريد المواد صبيز وبيسكورس  ورمل وحجر/WhatsApp Image 2026-07-23 at 11.49.43 AM (2).jpeg', 'أسطول شاحنات توريد المواد الإنشائية', 'توريد المواد')">
-                    <img src="imag/توريد المواد صبيز وبيسكورس  ورمل وحجر/WhatsApp Image 2026-07-23 at 11.49.43 AM (2).jpeg" alt="أسطول الشاحنات" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">توريد المواد</span>
-                        <h4 class="gallery-title">أسطول شاحنات توريد المواد الإنشائية</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
+                            <!-- Image 4 -->
+                            <div class="rtcc-service-card" onclick="openLightbox('imag/العزل والبولي يوريا/concrete-types-betonparszagros-min.jpg.jpeg', 'تطبيق العزل المائي للبنية الخرسانية', 'العزل والبولي يوريا')">
+                                <div class="rtcc-card-img" style="height: 220px;">
+                                    <img src="imag/العزل والبولي يوريا/concrete-types-betonparszagros-min.jpg.jpeg" alt="العزل المائي" loading="lazy">
+                                    <span class="rtcc-card-badge">العزل والبولي يوريا</span>
+                                </div>
+                                <div class="rtcc-card-content" style="padding: 1.25rem;">
+                                    <h3 class="rtcc-card-title" style="font-size: 1.05rem;">تطبيق العزل المائي والخرسانة</h3>
+                                    <span class="rtcc-card-link"><i class="fa-solid fa-expand me-1"></i> تكبير الصورة</span>
+                                </div>
+                            </div>
 
-                <!-- Infrastructure -->
-                <div class="gallery-card" data-gcat="piping" onclick="openLightbox('imag/الانابيب غاز وصرف صحي ومياة واتصالات وجميع المجالات/WhatsApp Image 2026-07-23 at 11.48.54 AM.jpeg', 'تمديد شبكات خطوط الأنابيب الرئيسية', 'البنية التحتية')">
-                    <img src="imag/الانابيب غاز وصرف صحي ومياة واتصالات وجميع المجالات/WhatsApp Image 2026-07-23 at 11.48.54 AM.jpeg" alt="أعمال الأنابيب" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">البنية التحتية</span>
-                        <h4 class="gallery-title">تمديد شبكات خطوط الأنابيب الرئيسية</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
+                            <!-- Image 5 -->
+                            <div class="rtcc-service-card" onclick="openLightbox('imag/الانابيب غاز وصرف صحي ومياة واتصالات وجميع المجالات/WhatsApp Image 2026-07-23 at 11.48.54 AM.jpeg', 'تمديد شبكات خطوط الأنابيب الرئيسية', 'البنية التحتية')">
+                                <div class="rtcc-card-img" style="height: 220px;">
+                                    <img src="imag/الانابيب غاز وصرف صحي ومياة واتصالات وجميع المجالات/WhatsApp Image 2026-07-23 at 11.48.54 AM.jpeg" alt="أعمال الأنابيب" loading="lazy">
+                                    <span class="rtcc-card-badge">البنية التحتية</span>
+                                </div>
+                                <div class="rtcc-card-content" style="padding: 1.25rem;">
+                                    <h3 class="rtcc-card-title" style="font-size: 1.05rem;">تمديد شبكات الأنابيب الرئيسية</h3>
+                                    <span class="rtcc-card-link"><i class="fa-solid fa-expand me-1"></i> تكبير الصورة</span>
+                                </div>
+                            </div>
 
-                <!-- Landscape -->
-                <div class="gallery-card" data-gcat="landscape" onclick="openLightbox('imag/اللاند سكيب والهارد سكيب/WhatsApp Image 2026-07-23 at 11.46.20 AM.jpeg', 'أعمال الهاردسكيب وتنسيق الموقع', 'اللاندسكيب والهاردسكيب')">
-                    <img src="imag/اللاند سكيب والهارد سكيب/WhatsApp Image 2026-07-23 at 11.46.20 AM.jpeg" alt="هاردسكيب" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">اللاندسكيب والهاردسكيب</span>
-                        <h4 class="gallery-title">أعمال الهاردسكيب وتنسيق الموقع</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
+                            <!-- Image 6 -->
+                            <div class="rtcc-service-card" onclick="openLightbox('imag/مستودعات ومعادن/WhatsApp Image 2026-07-23 at 11.49.33 AM.jpeg', 'تركيب الهياكل المعدنية والمستودعات', 'الهياكل والمستودعات')">
+                                <div class="rtcc-card-img" style="height: 220px;">
+                                    <img src="imag/مستودعات ومعادن/WhatsApp Image 2026-07-23 at 11.49.33 AM.jpeg" alt="هياكل معدنية" loading="lazy">
+                                    <span class="rtcc-card-badge">الهياكل والمستودعات</span>
+                                </div>
+                                <div class="rtcc-card-content" style="padding: 1.25rem;">
+                                    <h3 class="rtcc-card-title" style="font-size: 1.05rem;">تركيب الهياكل والمستودعات</h3>
+                                    <span class="rtcc-card-link"><i class="fa-solid fa-expand me-1"></i> تكبير الصورة</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="gallery-card" data-gcat="landscape" onclick="openLightbox('imag/اللاند سكيب والهارد سكيب/WhatsApp Image 2026-07-23 at 11.46.20 AM (2).jpeg', 'تنسيق الحدائق والمساحات الخضراء', 'اللاندسكيب والهاردسكيب')">
-                    <img src="imag/اللاند سكيب والهارد سكيب/WhatsApp Image 2026-07-23 at 11.46.20 AM (2).jpeg" alt="لاندسكيب" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">اللاندسكيب والهاردسكيب</span>
-                        <h4 class="gallery-title">تنسيق الحدائق والمساحات الخضراء</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
-
-                <!-- Concrete & Steel Rebar -->
-                <div class="gallery-card" data-gcat="concrete" onclick="openLightbox('imag/الخرسانات/images (1).jpg.jpeg', 'صب القواعد والأساسات الخرسانية', 'الخرسانات والحدادة')">
-                    <img src="imag/الخرسانات/images (1).jpg.jpeg" alt="خرسانات مسلحة" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">الخرسانات والحدادة</span>
-                        <h4 class="gallery-title">صب القواعد والأساسات الخرسانية</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
-                <div class="gallery-card" data-gcat="concrete" onclick="openLightbox('imag/حدادة ونجارة/WhatsApp Image 2026-07-23 at 11.47.28 AM.jpeg', 'أعمال الحدادة المسلحة وتركيب الحديد', 'الخرسانات والحدادة')">
-                    <img src="imag/حدادة ونجارة/WhatsApp Image 2026-07-23 at 11.47.28 AM.jpeg" alt="حدادة مسلحة" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">الخرسانات والحدادة</span>
-                        <h4 class="gallery-title">أعمال الحدادة المسلحة وتركيب الحديد</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
-
-                <!-- Steel Warehouses -->
-                <div class="gallery-card" data-gcat="steel" onclick="openLightbox('imag/مستودعات ومعادن/WhatsApp Image 2026-07-23 at 11.49.33 AM.jpeg', 'تركيب الهياكل المعدنية والمستودعات', 'الهياكل والمستودعات')">
-                    <img src="imag/مستودعات ومعادن/WhatsApp Image 2026-07-23 at 11.49.33 AM.jpeg" alt="هياكل معدنية" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">الهياكل والمستودعات</span>
-                        <h4 class="gallery-title">تركيب الهياكل المعدنية والمستودعات</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
-                </div>
-
-                <!-- Decor & Fit-out -->
-                <div class="gallery-card" data-gcat="decor" onclick="openLightbox('imag/الديكور والدهانات/WhatsApp Image 2026-07-23 at 11.46.45 AM.jpeg', 'أعمال الدهانات والديكورات الداخلية', 'التشطيبات والدهانات')">
-                    <img src="imag/الديكور والدهانات/WhatsApp Image 2026-07-23 at 11.46.45 AM.jpeg" alt="دهانات وديكور" loading="lazy">
-                    <div class="gallery-card-overlay">
-                        <span class="gallery-cat">التشطيبات والدهانات</span>
-                        <h4 class="gallery-title">أعمال الدهانات والديكورات الداخلية</h4>
-                        <div class="gallery-zoom-icon"><i class="fa-solid fa-expand"></i></div>
-                    </div>
+                    <!-- Indicator Dots Container -->
+                    <div class="slider-dots-container" id="galDotsContainer"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Executed Projects Section -->
+    <!-- Executed Projects Section (RTCC-Style Auto-Sliding Carousel) -->
     <section class="projects-section section-padding dark-bg" id="projects">
         <div class="container">
-            <div class="section-header text-center">
-                <div class="section-tag" data-ar="سجل الإنجازات" data-en="Proven Track Record">سجل الإنجازات</div>
-                <h2 class="section-title light" data-ar="المشاريع والعقود المنفذة" data-en="Executed Mega Projects">المشاريع والعقود المنفذة</h2>
-                <p class="section-subtitle light" data-ar="نعتز بتقديم نماذج حية من مشاريعنا العملاقة المنفذة لصالح كبرى الجهات والشركات" data-en="A showcase of successfully delivered contracts for premier Saudi institutions">نعتز بتقديم نماذج حية من مشاريعنا العملاقة المنفذة لصالح كبرى الجهات والشركات</p>
-            </div>
+            <div class="services-rtcc-layout">
+                <!-- Text Intro Column -->
+                <div class="services-intro-col">
+                    <div class="section-tag" data-ar="سجل الإنجازات" data-en="Proven Track Record">سجل الإنجازات</div>
+                    <h2 class="section-title light" data-ar="المشاريع والعقود المنفذة" data-en="Executed Mega Projects">
+                        المشاريع والعقود المنفذة
+                    </h2>
+                    <p class="services-intro-desc light-desc" data-ar="نعتز بتقديم نماذج حية من مشاريعنا العملاقة المنفذة لصالح كبرى الجهات والشركات الوطنية والمطارات وهيئات المياه والجامعات بالمملكة." data-en="A showcase of successfully delivered mega contracts for premier Saudi institutions, airports, water authorities & universities.">
+                        نعتز بتقديم نماذج حية من مشاريعنا العملاقة المنفذة لصالح كبرى الجهات والشركات الوطنية والمطارات وهيئات المياه والجامعات بالمملكة.
+                    </p>
 
-            <!-- Filter Tabs -->
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all" data-ar="الكل" data-en="All Projects">الكل</button>
-                <button class="filter-btn" data-filter="infra" data-ar="مطارات وبنية تحتية" data-en="Airports & Infra">مطارات وبنية تحتية</button>
-                <button class="filter-btn" data-filter="buildings" data-ar="مباني وفنادق وجامعات" data-en="Buildings & Universities">مباني وفنادق وجامعات</button>
-                <button class="filter-btn" data-filter="commercial" data-ar="مرافق تجارية ورياضية" data-en="Commercial & Sports">مرافق تجارية ورياضية</button>
-                <button class="filter-btn" data-filter="supply" data-ar="توريد مواد وتجهيزات" data-en="Materials & Supply">توريد مواد وتجهيزات</button>
-            </div>
-
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Project 1 -->
-                <div class="project-card" data-category="infra">
-                    <div class="project-tag-badge">مطارات وبنية تحتية</div>
-                    <h3 class="project-title" data-ar="تنفيذ أرضيات مطار جيزان الدولي" data-en="Jizan International Airport Flooring">تنفيذ أرضيات مطار جيزان الدولي</h3>
-                    <p class="project-client" data-ar="بالتعاقد مع: شركة سفاري للمقاولات (2021 - 2022)" data-en="Client: Safari Contracting (2021 - 2022)">بالتعاقد مع: شركة سفاري للمقاولات (2021 - 2022)</p>
-                    <p class="project-desc" data-ar="تنفيذ وتجهيز أرضيات مطار جيزان الدولي وفق أعلى المواصفات الفنية المعتمدة للهيئات الملكية والمطارات." data-en="Paving and finishing flooring for Jizan International Airport adhering to international aviation standards.">تنفيذ وتجهيز أرضيات مطار جيزان الدولي وفق أعلى المواصفات الفنية المعتمدة للهيئات الملكية والمطارات.</p>
+                    <div class="services-intro-actions">
+                        <a href="projects.html" class="btn btn-gold btn-glow" data-ar="عرض جميع المشاريع والعقود" data-en="View All Projects">
+                            <span>عرض جميع المشاريع</span> <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                        <div class="slider-arrows">
+                            <button class="slider-arrow-btn light-btn" id="projPrevBtn" aria-label="Previous Slide"><i class="fa-solid fa-chevron-right"></i></button>
+                            <button class="slider-arrow-btn light-btn" id="projNextBtn" aria-label="Next Slide"><i class="fa-solid fa-chevron-left"></i></button>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card" data-category="infra">
-                    <div class="project-tag-badge">مطارات وبنية تحتية</div>
-                    <h3 class="project-title" data-ar="محطات التحلية وخزانات المياه (أملج - الليث - الوجه)" data-en="Desalination Plants & Tanks (Umluj - Al-Laith - Al-Wajh)">محطات التحلية وخزانات المياه (أملج - الليث - الوجه)</h3>
-                    <p class="project-client" data-ar="بالتعاقد مع: شركة الراشد للتجارة والمقاولات (2019 - 2022)" data-en="Client: Al-Rashed Trading (2019 - 2022)">بالتعاقد مع: شركة الراشد للتجارة والمقاولات (2019 - 2022)</p>
-                    <p class="project-desc" data-ar="تنفيذ محطات ضخ وخزانات طرفية وخطوط أنابيب مياه بين المحطات والخزانات الممتدة بساحل البحر الأحمر." data-en="Execution of desalination pump stations, storage tanks, and interconnected water transmission pipelines.">تنفيذ محطات ضخ وخزانات طرفية وخطوط أنابيب مياه بين المحطات والخزانات الممتدة بساحل البحر الأحمر.</p>
-                </div>
+                <!-- Slider Viewport Column -->
+                <div class="services-slider-col">
+                    <div class="services-slider-viewport" id="projectsViewport">
+                        <div class="services-slider-track" id="projectsTrack">
+                            <!-- Project 1 -->
+                            <div class="rtcc-service-card dark-card">
+                                <div class="rtcc-card-content">
+                                    <span class="project-tag-badge">مطارات وبنية تحتية</span>
+                                    <h3 class="rtcc-card-title" data-ar="تنفيذ أرضيات مطار جيزان الدولي" data-en="Jizan International Airport Flooring">تنفيذ أرضيات مطار جيزان الدولي</h3>
+                                    <p class="project-client" data-ar="شركة سفاري للمقاولات (2021 - 2022)" data-en="Safari Contracting">شركة سفاري للمقاولات (2021 - 2022)</p>
+                                    <p class="rtcc-card-desc" data-ar="تنفيذ وتجهيز أرضيات مطار جيزان الدولي وفق أعلى المواصفات الفنية المعتمدة للهيئات الملكية والمطارات." data-en="Paving and finishing flooring for Jizan International Airport.">تنفيذ وتجهيز أرضيات مطار جيزان الدولي وفق أعلى المواصفات الفنية المعتمدة للهيئات الملكية والمطارات.</p>
+                                </div>
+                            </div>
 
-                <!-- Project 3 -->
-                <div class="project-card" data-category="buildings">
-                    <div class="project-tag-badge">مباني وفنادق وجامعات</div>
-                    <h3 class="project-title" data-ar="تنفيذ وتشطيب جامعة تربة" data-en="Turba University Finishing & Flooring">تنفيذ وتشطيب جامعة تربة</h3>
-                    <p class="project-client" data-ar="بالتعاقد مع: شركة أضواء الخليل للمقاولات" data-en="Client: Adwaa Al Khaleej Company">بالتعاقد مع: شركة أضواء الخليل للمقاولات</p>
-                    <p class="project-desc" data-ar="تنفيذ أعمال الدهانات الداخلية والخارجية والأرضيات والياسة بمباني الجامعة." data-en="Comprehensive finishing including specialized painting, epoxy flooring, and plastering for campus buildings.">تنفيذ أعمال الدهانات الداخلية والخارجية والأرضيات والياسة بمباني الجامعة.</p>
-                </div>
+                            <!-- Project 2 -->
+                            <div class="rtcc-service-card dark-card">
+                                <div class="rtcc-card-content">
+                                    <span class="project-tag-badge">مطارات وبنية تحتية</span>
+                                    <h3 class="rtcc-card-title" data-ar="محطات التحلية وخزانات المياه" data-en="Desalination Plants & Tanks">محطات التحلية وخزانات المياه</h3>
+                                    <p class="project-client" data-ar="شركة الراشد للتجارة والمقاولات (2019 - 2022)" data-en="Al-Rashed Trading">شركة الراشد للتجارة والمقاولات (2019 - 2022)</p>
+                                    <p class="rtcc-card-desc" data-ar="تنفيذ محطات ضخ وخزانات طرفية وخطوط أنابيب مياه (أملج - الليث - الوجه) بساحل البحر الأحمر." data-en="Execution of pump stations, storage tanks & water pipelines.">تنفيذ محطات ضخ وخزانات طرفية وخطوط أنابيب مياه (أملج - الليث - الوجه) بساحل البحر الأحمر.</p>
+                                </div>
+                            </div>
 
-                <!-- Project 4 -->
-                <div class="project-card" data-category="commercial">
-                    <div class="project-tag-badge">مرافق تجارية ورياضية</div>
-                    <h3 class="project-title" data-ar="تنفيذ نادي العرض الرياضي بالقويعية" data-en="Al-Arda Sports Club Complex">تنفيذ نادي العرض الرياضي بالقويعية</h3>
-                    <p class="project-client" data-ar="بالتعاقد مع: شركة حسان عبدالله (2014 - 2017)" data-en="Client: Hassan Abdullah Company (2014 - 2017)">بالتعاقد مع: شركة حسان عبدالله (2014 - 2017)</p>
-                    <p class="project-desc" data-ar="إنشاء ملعب كرة قدم بمواصفات معتمدة، مسابح أولمبية، مباني إدارية، وساحات ومرافق رياضية." data-en="Construction of FIFA-standard football pitch, Olympic pools, administration headquarters, and surrounding facilities.">إنشاء ملعب كرة قدم بمواصفات معتمدة، مسابح أولمبية، مباني إدارية، وساحات ومرافق رياضية.</p>
-                </div>
+                            <!-- Project 3 -->
+                            <div class="rtcc-service-card dark-card">
+                                <div class="rtcc-card-content">
+                                    <span class="project-tag-badge">مباني وفنادق وجامعات</span>
+                                    <h3 class="rtcc-card-title" data-ar="تنفيذ وتشطيب جامعة تربة" data-en="Turba University Finishing">تنفيذ وتشطيب جامعة تربة</h3>
+                                    <p class="project-client" data-ar="شركة أضواء الخليل للمقاولات" data-en="Adwaa Al Khaleej">شركة أضواء الخليل للمقاولات</p>
+                                    <p class="rtcc-card-desc" data-ar="تنفيذ أعمال الدهانات الداخلية والخارجية والأرضيات والياسة بمباني الجامعة." data-en="Comprehensive finishing including specialized painting & flooring.">تنفيذ أعمال الدهانات الداخلية والخارجية والأرضيات والياسة بمباني الجامعة.</p>
+                                </div>
+                            </div>
 
-                <!-- Project 5 -->
-                <div class="project-card" data-category="infra">
-                    <div class="project-tag-badge">مطارات وبنية تحتية</div>
-                    <h3 class="project-title" data-ar="بنية تحتية لإسكان ضاحية الملك عبدالله بجيزان" data-en="King Abdullah Suburb Infrastructure - Jizan">بنية تحتية لإسكان ضاحية الملك عبدالله بجيزان</h3>
-                    <p class="project-client" data-ar="بالتعاقد مع: شركة صرح التقنية للمقاولات (2021 - 2022)" data-en="Client: Sarh Technical Contracting (2021 - 2022)">بالتعاقد مع: شركة صرح التقنية للمقاولات (2021 - 2022)</p>
-                    <p class="project-desc" data-ar="تنفيذ أعمال تصريف السيول وشبكات الصرف الصحي والمرافق الأساسية بالضاحية." data-en="Execution of storm water channels, main sewage networks, and infrastructure utilities.">تنفيذ أعمال تصريف السيول وشبكات الصرف الصحي والمرافق الأساسية بالضاحية.</p>
-                </div>
+                            <!-- Project 4 -->
+                            <div class="rtcc-service-card dark-card">
+                                <div class="rtcc-card-content">
+                                    <span class="project-tag-badge">مرافق تجارية ورياضية</span>
+                                    <h3 class="rtcc-card-title" data-ar="تنفيذ نادي العرض الرياضي بالقويعية" data-en="Al-Arda Sports Club">تنفيذ نادي العرض الرياضي بالقويعية</h3>
+                                    <p class="project-client" data-ar="شركة حسان عبدالله (2014 - 2017)" data-en="Hassan Abdullah Co.">شركة حسان عبدالله (2014 - 2017)</p>
+                                    <p class="rtcc-card-desc" data-ar="إنشاء ملعب كرة قدم، مسابح أولمبية، مباني إدارية، وساحات ومرافق رياضية." data-en="Construction of football pitch, Olympic pools & facilities.">إنشاء ملعب كرة قدم، مسابح أولمبية، مباني إدارية، وساحات ومرافق رياضية.</p>
+                                </div>
+                            </div>
 
-                <!-- Project 6 -->
-                <div class="project-card" data-category="supply">
-                    <div class="project-tag-badge">توريد مواد وتجهيزات</div>
-                    <h3 class="project-title" data-ar="عوازل وأرضيات مطار الملك عبدالعزيز بجدة" data-en="Jeddah Airport Waterproofing & Flooring Supply">عوازل وأرضيات مطار الملك عبدالعزيز بجدة</h3>
-                    <p class="project-client" data-ar="بالتعاقد مع: شركة القياتي وبن لادن للعزل" data-en="Client: Al-Qayati & Bin Laden Insulation">بالتعاقد مع: شركة القياتي وبن لادن للعزل</p>
-                    <p class="project-desc" data-ar="توريد المواد اللاصقة والعازلة المتخصصة لأرضيات مطار جدة بمواصفات عالية جداً." data-en="Supplying high-grade adhesive bonding and insulation materials for airport concourses.">توريد المواد اللاصقة والعازلة المتخصصة لأرضيات مطار جدة بمواصفات عالية جداً.</p>
-                </div>
+                            <!-- Project 5 -->
+                            <div class="rtcc-service-card dark-card">
+                                <div class="rtcc-card-content">
+                                    <span class="project-tag-badge">مطارات وبنية تحتية</span>
+                                    <h3 class="rtcc-card-title" data-ar="بنية تحتية لإسكان ضاحية الملك عبدالله" data-en="King Abdullah Suburb Infra">بنية تحتية لإسكان ضاحية الملك عبدالله</h3>
+                                    <p class="project-client" data-ar="شركة صرح التقنية للمقاولات (2021 - 2022)" data-en="Sarh Technical Co.">شركة صرح التقنية للمقاولات (2021 - 2022)</p>
+                                    <p class="rtcc-card-desc" data-ar="تنفيذ أعمال تصريف السيول وشبكات الصرف الصحي والمرافق الأساسية بجيزان." data-en="Execution of storm water channels & sewage networks.">تنفيذ أعمال تصريف السيول وشبكات الصرف الصحي والمرافق الأساسية بجيزان.</p>
+                                </div>
+                            </div>
 
-                <!-- Project 7 -->
-                <div class="project-card" data-category="buildings">
-                    <div class="project-tag-badge">مباني وفنادق وجامعات</div>
-                    <h3 class="project-title" data-ar="أكثر من 100 مبنى سكني وفنادق بمحافظة تربة" data-en="100+ Residential Buildings & Hotels">أكثر من 100 مبنى سكني وفنادق بمحافظة تربة</h3>
-                    <p class="project-client" data-ar="لصالح الأهالي وبلدية تربة (خبرة 15 عاماً)" data-en="Location: Turba Governorate (Over 15 Years)">لصالح الأهالي وبلدية تربة (خبرة 15 عاماً)</p>
-                    <p class="project-desc" data-ar="بناء وتشييد وتسليم مفتاح لأكثر من مائة مبنى سكني وفنادق كبرى وقصور أفراح ومباني المباحث والدفاع المدني." data-en="Turnkey execution of residential complexes, major hotels, wedding halls, and government civil defense buildings.">بناء وتشييد وتسليم مفتاح لأكثر من مائة مبنى سكني وفنادق كبرى وقصور أفراح ومباني المباحث والدفاع المدني.</p>
-                </div>
+                            <!-- Project 6 -->
+                            <div class="rtcc-service-card dark-card">
+                                <div class="rtcc-card-content">
+                                    <span class="project-tag-badge">توريد مواد وتجهيزات</span>
+                                    <h3 class="rtcc-card-title" data-ar="عوازل وأرضيات مطار الملك عبدالعزيز" data-en="Jeddah Airport Waterproofing">عوازل وأرضيات مطار الملك عبدالعزيز</h3>
+                                    <p class="project-client" data-ar="شركة القياتي وبن لادن للعزل" data-en="Bin Laden Insulation">شركة القياتي وبن لادن للعزل</p>
+                                    <p class="rtcc-card-desc" data-ar="توريد المواد اللاصقة والعازلة المتخصصة لأرضيات مطار جدة الدولي." data-en="Supplying high-grade insulation materials for airport.">توريد المواد اللاصقة والعازلة المتخصصة لأرضيات مطار جدة الدولي.</p>
+                                </div>
+                            </div>
 
-                <!-- Project 8 -->
-                <div class="project-card" data-category="supply">
-                    <div class="project-tag-badge">توريد مواد وتجهيزات</div>
-                    <h3 class="project-title" data-ar="توريد مواد حديقة الملك عبدالله بالرياض" data-en="King Abdullah Park Site Materials Supply - Riyadh">توريد مواد حديقة الملك عبدالله بالرياض</h3>
-                    <p class="project-client" data-ar="بالتعاقد مع: شركة جودت للمقاولات (2012 - 2015)" data-en="Client: Jawdat Contracting Co. (2012 - 2015)">بالتعاقد مع: شركة جودت للمقاولات (2012 - 2015)</p>
-                    <p class="project-desc" data-ar="توريد مواد التأسيس وتجهيز الموقع العام لمنتزه الملك عبدالله بالرياض." data-en="Sub-base material supply and civil site preparation for King Abdullah Park in Riyadh.">توريد مواد التأسيس وتجهيز الموقع العام لمنتزه الملك عبدالله بالرياض.</p>
+                            <!-- Project 7 -->
+                            <div class="rtcc-service-card dark-card">
+                                <div class="rtcc-card-content">
+                                    <span class="project-tag-badge">مباني وفنادق وجامعات</span>
+                                    <h3 class="rtcc-card-title" data-ar="أكثر من 100 مبنى سكني وفنادق" data-en="100+ Residential Buildings">أكثر من 100 مبنى سكني وفنادق</h3>
+                                    <p class="project-client" data-ar="لصالح الأهالي وبلدية تربة (خبرة 15 عاماً)" data-en="Turba Governorate">لصالح الأهالي وبلدية تربة (خبرة 15 عاماً)</p>
+                                    <p class="rtcc-card-desc" data-ar="بناء وتشييد وتسليم مفتاح لأكثر من مائة مبنى سكني وفنادق كبرى ومباني حكومية." data-en="Turnkey execution of residential complexes & hotels.">بناء وتشييد وتسليم مفتاح لأكثر من مائة مبنى سكني وفنادق كبرى ومباني حكومية.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Indicator Dots Container -->
+                    <div class="slider-dots-container" id="projDotsContainer"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Strategic Partners Section -->
+    <!-- Strategic Partners / Clients Section -->
     <section class="partners-section section-padding" id="partners">
         <div class="container">
             <div class="section-header text-center">
-                <div class="section-tag" data-ar="شراكات استراتيجية" data-en="Strategic Alliances">شراكات استراتيجية</div>
-                <h2 class="section-title" data-ar="شركاء النجاح" data-en="Our Trusted Partners">شركاء النجاح</h2>
+                <div class="section-tag" data-ar="عملاؤنا" data-en="Our Clients">عملاؤنا</div>
+                <h2 class="section-title" data-ar="عملاؤنا وشركاؤنا الاستراتيجيون" data-en="Our Clients & Strategic Partners">عملاؤنا وشركاؤنا الاستراتيجيون</h2>
                 <p class="section-subtitle" data-ar="نفخر بشراكتنا وثقة كبرى الشركات والجهات الوطنية والمشاريع العملاقة بالمملكة" data-en="We take pride in our strong partnerships with Saudi Arabia's leading developers and contractors">نفخر بشراكتنا وثقة كبرى الشركات والجهات الوطنية والمشاريع العملاقة بالمملكة</p>
             </div>
 
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <div class="partner-name">TROJENA</div>
-                    <div class="partner-sub">NEOM Project</div>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-name">Red Sea Global</div>
-                    <div class="partner-sub">البحر الأحمر الدولية</div>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-name">alfanar</div>
-                    <div class="partner-sub">شركة الفنار</div>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-name">BIN LADEN GROUP</div>
-                    <div class="partner-sub">مجموعة بن لادن</div>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-name">SAUDI OGER</div>
-                    <div class="partner-sub">سعودي أوجيه</div>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-name">SHIBH AL JAZIRA</div>
-                    <div class="partner-sub">شبه الجزيرة للمقاولات</div>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-name">NATIONAL PAINTS</div>
-                    <div class="partner-sub">دهانات الوطنية</div>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-name">SALCO</div>
-                    <div class="partner-sub">شركة سالكو</div>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-name">CHEC CHINA</div>
-                    <div class="partner-sub">الشركة الصينية للهندسة</div>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-name">BATCO GROUP</div>
-                    <div class="partner-sub">مجموعة باتكو</div>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-name">FIRST FIX</div>
-                    <div class="partner-sub">فرست فكس</div>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-name">AL MULHEM</div>
-                    <div class="partner-sub">شركة الملحم</div>
+            <div class="clients-count-badge">
+                <i class="fa-solid fa-handshake-simple"></i>
+                <span data-ar="+14 عميل وشريك استراتيجي" data-en="14+ Clients & Strategic Partners">+14 عميل وشريك استراتيجي</span>
+            </div>
+
+            <!-- Infinite Marquee Ticker -->
+            <div class="partners-marquee-wrapper">
+                <div class="partners-marquee-track" id="partnersMarquee">
+                    <!-- === SET 1 (original) === -->
+                    <!-- NASL - Featured -->
+                    <div class="partner-card partner-featured">
+                        <div class="partner-logo-wrap">
+                            <img src="logo.png?v=3" alt="NASL Business Company" class="partner-logo">
+                        </div>
+                        <div class="partner-name">NASL BUSINESS</div>
+                        <div class="partner-sub">نسل الأعمال</div>
+                    </div>
+                    <!-- RTCC - Al Rashed Trading & Contracting -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/rtcc.png" alt="RTCC" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>RTCC</span>'">
+                        </div>
+                        <div class="partner-name">RTCC</div>
+                        <div class="partner-sub">شركة الراشد للمقاولات</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/trojena.png" alt="TROJENA" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>TROJENA</span>'">
+                        </div>
+                        <div class="partner-name">TROJENA</div>
+                        <div class="partner-sub">NEOM Project</div>
+                    </div>
+
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/red-sea-global.png" alt="Red Sea Global" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>Red Sea Global</span>'">
+                        </div>
+                        <div class="partner-name">Red Sea Global</div>
+                        <div class="partner-sub">البحر الأحمر الدولية</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/alfanar.svg" alt="alfanar" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>alfanar</span>'">
+                        </div>
+                        <div class="partner-name">alfanar</div>
+                        <div class="partner-sub">شركة الفنار</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/bin-laden.png" alt="BIN LADEN GROUP" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>BIN LADEN GROUP</span>'">
+                        </div>
+                        <div class="partner-name">BIN LADEN GROUP</div>
+                        <div class="partner-sub">مجموعة بن لادن</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/saudi-oger.svg" alt="SAUDI OGER" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>SAUDI OGER</span>'">
+                        </div>
+                        <div class="partner-name">SAUDI OGER</div>
+                        <div class="partner-sub">سعودي أوجيه</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/shibh-al-jazira.png" alt="SHIBH AL JAZIRA" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>SAJCO</span>'">
+                        </div>
+                        <div class="partner-name">SHIBH AL JAZIRA</div>
+                        <div class="partner-sub">شبه الجزيرة</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/national-paints.png" alt="NATIONAL PAINTS" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>NATIONAL PAINTS</span>'">
+                        </div>
+                        <div class="partner-name">NATIONAL PAINTS</div>
+                        <div class="partner-sub">دهانات الوطنية</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/salco.svg" alt="SALCO" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>SALCO</span>'">
+                        </div>
+                        <div class="partner-name">SALCO</div>
+                        <div class="partner-sub">شركة سالكو</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/chec.png" alt="CHEC CHINA" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>CHEC</span>'">
+                        </div>
+                        <div class="partner-name">CHEC CHINA</div>
+                        <div class="partner-sub">الشركة الصينية</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/batco.png" alt="BATCO GROUP" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>BATCO</span>'">
+                        </div>
+                        <div class="partner-name">BATCO GROUP</div>
+                        <div class="partner-sub">مجموعة باتكو</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/first-fix.svg" alt="FIRST FIX" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>FIRST FIX</span>'">
+                        </div>
+                        <div class="partner-name">FIRST FIX</div>
+                        <div class="partner-sub">فرست فكس</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/al-mulhem.png" alt="AL MULHEM" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>AL MULHEM</span>'">
+                        </div>
+                        <div class="partner-name">AL MULHEM</div>
+                        <div class="partner-sub">شركة الملحم</div>
+                    </div>
+
+                    <!-- === SET 2 (duplicate for seamless infinite loop) === -->
+                    <div class="partner-card partner-featured">
+                        <div class="partner-logo-wrap">
+                            <img src="logo.png?v=3" alt="NASL Business Company" class="partner-logo">
+                        </div>
+                        <div class="partner-name">NASL BUSINESS</div>
+                        <div class="partner-sub">نسل الأعمال</div>
+                    </div>
+                    <!-- RTCC - Al Rashed Trading & Contracting -->
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/rtcc.png" alt="RTCC" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>RTCC</span>'">
+                        </div>
+                        <div class="partner-name">RTCC</div>
+                        <div class="partner-sub">شركة الراشد للمقاولات</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/trojena.png" alt="TROJENA" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>TROJENA</span>'">
+                        </div>
+                        <div class="partner-name">TROJENA</div>
+                        <div class="partner-sub">NEOM Project</div>
+                    </div>
+
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/red-sea-global.png" alt="Red Sea Global" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>Red Sea Global</span>'">
+                        </div>
+                        <div class="partner-name">Red Sea Global</div>
+                        <div class="partner-sub">البحر الأحمر الدولية</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/alfanar.svg" alt="alfanar" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>alfanar</span>'">
+                        </div>
+                        <div class="partner-name">alfanar</div>
+                        <div class="partner-sub">شركة الفنار</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/bin-laden.png" alt="BIN LADEN GROUP" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>BIN LADEN GROUP</span>'">
+                        </div>
+                        <div class="partner-name">BIN LADEN GROUP</div>
+                        <div class="partner-sub">مجموعة بن لادن</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/saudi-oger.svg" alt="SAUDI OGER" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>SAUDI OGER</span>'">
+                        </div>
+                        <div class="partner-name">SAUDI OGER</div>
+                        <div class="partner-sub">سعودي أوجيه</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/shibh-al-jazira.png" alt="SHIBH AL JAZIRA" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>SAJCO</span>'">
+                        </div>
+                        <div class="partner-name">SHIBH AL JAZIRA</div>
+                        <div class="partner-sub">شبه الجزيرة</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/national-paints.png" alt="NATIONAL PAINTS" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>NATIONAL PAINTS</span>'">
+                        </div>
+                        <div class="partner-name">NATIONAL PAINTS</div>
+                        <div class="partner-sub">دهانات الوطنية</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/salco.svg" alt="SALCO" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>SALCO</span>'">
+                        </div>
+                        <div class="partner-name">SALCO</div>
+                        <div class="partner-sub">شركة سالكو</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/chec.png" alt="CHEC CHINA" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>CHEC</span>'">
+                        </div>
+                        <div class="partner-name">CHEC CHINA</div>
+                        <div class="partner-sub">الشركة الصينية</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/batco.png" alt="BATCO GROUP" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>BATCO</span>'">
+                        </div>
+                        <div class="partner-name">BATCO GROUP</div>
+                        <div class="partner-sub">مجموعة باتكو</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/first-fix.svg" alt="FIRST FIX" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>FIRST FIX</span>'">
+                        </div>
+                        <div class="partner-name">FIRST FIX</div>
+                        <div class="partner-sub">فرست فكس</div>
+                    </div>
+                    <div class="partner-card">
+                        <div class="partner-logo-wrap">
+                            <img src="logos/al-mulhem.png" alt="AL MULHEM" class="partner-logo" onerror="this.outerHTML='<span class=\'partner-logo-abbr\'>AL MULHEM</span>'">
+                        </div>
+                        <div class="partner-name">AL MULHEM</div>
+                        <div class="partner-sub">شركة الملحم</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -945,13 +1009,9 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <div class="brand-logo">
-                        <div class="logo-badge">NSL</div>
-                        <div class="brand-text">
-                            <span class="brand-title">نســل الأعمــال</span>
-                            <span class="brand-sub">للتجارة والمقاولات المحدودة</span>
-                        </div>
-                    </div>
+                    <a href="#hero" class="brand-logo mb-3" aria-label="شركة نسل الأعمال المحدودة">
+                        <img src="logo.png?v=3" alt="شركة نسل الأعمال المحدودة" class="site-logo-img">
+                    </a>
                     <p class="footer-desc" data-ar="شركة نسل الأعمال المحدودة للتجارة والمقاولات - شريككم الموثوق لبناء مستقبل واعد في المملكة العربية السعودية وفق رؤية 2030." data-en="NASL Business Company Ltd - Your trusted partner in building Saudi Arabia's future under Vision 2030.">
                         شركة نسل الأعمال المحدودة للتجارة والمقاولات - شريككم الموثوق لبناء مستقبل واعد في المملكة العربية السعودية وفق رؤية 2030.
                     </p>
@@ -1012,13 +1072,13 @@
     <!-- Floating WhatsApp Direct Chat Button -->
     <div class="whatsapp-float-container">
         <div class="whatsapp-tooltip" data-ar="تواصل مباشر مع الإدارة عبر الواتساب" data-en="Chat Direct with Us on WhatsApp">تواصل مباشر مع الإدارة عبر الواتساب</div>
-        <a href="https://wa.me/966559608789?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B4%D8%B1%D9%83%D8%A9%20%D9%86%D8%B3%D9%84%20%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85" target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" aria-label="WhatsApp Chat">
+        <a href="https://api.whatsapp.com/send?phone=966559608789&text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B4%D8%B1%D9%83%D8%A9%20%D9%86%D8%B3%D9%84%20%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83%D9%85" target="_blank" rel="noopener noreferrer" class="whatsapp-float-btn" aria-label="WhatsApp Chat">
             <i class="fa-brands fa-whatsapp"></i>
             <span class="whatsapp-pulse-ring"></span>
         </a>
     </div>
 
     <!-- Custom JS -->
-    <script src="script.js"></script>
+    <script src="script.js?v=light19"></script>
 </body>
 </html>
