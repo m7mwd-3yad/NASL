@@ -402,7 +402,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const filter = btn.getAttribute('data-gfilter');
 
             galleryCards.forEach(card => {
-                if (filter === 'all' || card.getAttribute('data-gcat') === filter) {
+                const cardCats = (card.getAttribute('data-gcat') || '').split(' ');
+                if (filter === 'all' || cardCats.includes(filter)) {
                     card.style.display = 'block';
                     card.style.animation = 'fadeIn 0.4s ease forwards';
                 } else {
