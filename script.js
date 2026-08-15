@@ -90,12 +90,9 @@ const servicesData = {
             "Strict adherence to environmental safety"
         ],
         images: [
-            { src: "imag/كسارة/crusher.png", titleAr: "كسارة أحجار ذات طاقة إنتاجية عالية", titleEn: "High-capacity stone crushing plant" },
             { src: "imag/كسارة/8-4-1000x700.jpg.jpeg", titleAr: "موقع إنتاج البحص والمواد الصخرية", titleEn: "Aggregate & crushed stone production" },
             { src: "imag/كسارة/mobile-crusher-in-algeria-for-aggregates.webp", titleAr: "كسارة متنقلة لتجهيز المواقع", titleEn: "Mobile stone crushing equipment" },
-            { src: "imag/كسارة/jpj.png", titleAr: "غربلة وتصنيف الأحجار والبص", titleEn: "Aggregate screening & sorting plant" },
-            { src: "imag/كسارة/images.jpg.jpeg", titleAr: "خطوط إنتاج الرمل والمواد الصخرية", titleEn: "Sand & aggregate production line" },
-            { src: "imag/كسارة/images (1).jpg.jpeg", titleAr: "تخزين وتجهيز المواد للتحميل", titleEn: "Crushed stone stockpiles" }
+            { src: "imag/كسارة/images.jpg.jpeg", titleAr: "خطوط إنتاج الرمل والمواد الصخرية", titleEn: "Sand & aggregate production line" }
         ]
     },
     5: {
@@ -232,12 +229,10 @@ const servicesData = {
             "Long-term structural protection guarantee"
         ],
         images: [
-            { src: "imag/العزل والبولي يوريا/concrete-types-betonparszagros-min.jpg.jpeg", titleAr: "تطبيق العزل المائي للبنية الخرسانية", titleEn: "Concrete waterproofing membrane" },
             { src: "imag/العزل والبولي يوريا/d1047798-4a8d-4994-b1b0-204e60677578.jpg.jpeg", titleAr: "رش مادة البولي يوريا لحماية الأسطح", titleEn: "Polyurea spray coating protection" },
             { src: "imag/العزل والبولي يوريا/images.jpg.jpeg", titleAr: "عزل الخزانات والأسطح الخرسانية", titleEn: "Reservoir waterproofing" },
             { src: "imag/العزل والبولي يوريا/images (1).jpg.jpeg", titleAr: "طبقات العزل الحامي من التسربات", titleEn: "Protective insulation layer" },
-            { src: "imag/العزل والبولي يوريا/images (2).jpg.jpeg", titleAr: "اختبار كفاءة وسماكة مادة العزل", titleEn: "Waterproofing quality inspection" },
-            { src: "imag/العزل والبولي يوريا/images (4).jpg.jpeg", titleAr: "معالجة وعزل الأساسات الإنشائية", titleEn: "Foundation polyurea insulation" }
+            { src: "imag/العزل والبولي يوريا/images (2).jpg.jpeg", titleAr: "اختبار كفاءة وسماكة مادة العزل", titleEn: "Waterproofing quality inspection" }
         ]
     }
 };
@@ -514,8 +509,11 @@ function handleFormSubmit(event) {
 • الخدمة المطلوبة: ${service}
 • تفاصيل المشروع: ${details}`;
 
+    const targetWhatsAppInput = document.getElementById('targetWhatsApp');
+    const targetWhatsApp = targetWhatsAppInput ? targetWhatsAppInput.value : '966559608789';
+
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=966559608789&text=${encodedMessage}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${targetWhatsApp}&text=${encodedMessage}`;
 
     // Direct redirection avoids popup blockers and infinite loading screens on mobile & desktop
     window.location.href = whatsappUrl;
@@ -861,4 +859,47 @@ document.addEventListener('DOMContentLoaded', () => {
     setupRtccSlider('servicesTrack', 'servicesViewport', 'svcPrevBtn', 'svcNextBtn', 'svcDotsContainer', 3600);
     setupRtccSlider('galleryTrack', 'galleryViewport', 'galPrevBtn', 'galNextBtn', 'galDotsContainer', 4200);
     setupRtccSlider('projectsTrack', 'projectsViewport', 'projPrevBtn', 'projNextBtn', 'projDotsContainer', 4000);
+});
+
+// --- Sector Filter Function ---
+function filterServices(category, element) {
+    // Update active class on sector cards
+    document.querySelectorAll('.sector-card').forEach(card => {
+        card.classList.remove('active');
+    });
+    element.classList.add('active');
+
+    // Filter service cards
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        if (cardCategory === category || category === 'all') {
+            card.style.display = 'block';
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 50);
+        } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.display = 'none';
+            }, 300);
+        }
+    });
+}
+
+// Call filter once on load to show default category (Contracting)
+document.addEventListener('DOMContentLoaded', () => {
+    const defaultSector = document.querySelector('.sector-card.active');
+    if (defaultSector) {
+        filterServices(defaultSector.getAttribute('data-target'), defaultSector);
+    } else {
+        // If no sector is active initially, hide all services
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.style.display = 'none';
+            card.style.opacity = '0';
+        });
+    }
 });

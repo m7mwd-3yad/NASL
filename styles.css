@@ -2849,8 +2849,278 @@ body.lang-en .back-to-top-btn {
     100% { background-position: 200% 0; }
 }
 
+    .back-to-top-btn {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+    }
+
+    body.lang-en .back-to-top-btn {
+        right: auto;
+        left: 1.25rem;
+    }
+
+    .lightbox-modal {
+        padding: 1rem;
+    }
+
+    .lightbox-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .lightbox-content img {
+        max-height: 65vh;
+        border-radius: var(--radius-md);
+    }
+
+    .lightbox-close {
+        top: 1rem;
+        right: 1rem;
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+    }
+
+    body.lang-en .lightbox-close {
+        right: auto;
+        left: 1rem;
+    }
+
+    .modal-box {
+        padding: 1.5rem;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+
+    .modal-close {
+        top: 0.75rem;
+        left: 0.75rem;
+    }
+
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 0 1rem; }
+    .section-padding { padding: 3.5rem 0; }
+    .page-banner { padding: 8.5rem 0 3rem; }
+    .section-title { font-size: 1.5rem; }
+    .section-subtitle { font-size: 0.9rem; }
+    .header-actions .btn-sm { display: none; }
+    .gallery-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .gallery-card { height: 230px; }
+    .gallery-title { font-size: 0.95rem; }
+    .gallery-cat { font-size: 0.7rem; }
+}
+
+/* ==========================================================================
+   ADVANCED SCROLL ANIMATIONS, LIGHTING & INTERACTIVE EFFECTS
+   ========================================================================== */
+
+/* 1. Scroll Progress Bar */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-navy), var(--accent-gold), var(--accent-gold-light));
+    z-index: 10000;
+    width: 0%;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* 2. Scroll Reveal Keyframe Animations */
+.reveal-init {
+    opacity: 0;
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reveal-up {
+    transform: translateY(45px);
+}
+
+.reveal-scale {
+    transform: translateY(35px) scale(0.95);
+}
+
+.reveal-left {
+    transform: translateX(-45px);
+}
+
+.reveal-right {
+    transform: translateX(45px);
+}
+
+.reveal-visible {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1) !important;
+}
+
+/* Stagger Delays */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* 3. Interactive Card Mouse Spotlight Glow Effect */
+.service-card, .project-card, .rtcc-service-card, .partner-card, .cert-card, .vvm-card, .stat-card, .gm-card, .gallery-card {
+    position: relative;
+}
+
+.service-card::before, .project-card::before, .rtcc-service-card::before, 
+.partner-card::before, .cert-card::before, .vvm-card::before, 
+.stat-card::before, .gm-card::before, .gallery-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212, 175, 55, 0.14), transparent 70%);
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.service-card:hover::before, .project-card:hover::before, .rtcc-service-card:hover::before, 
+.partner-card:hover::before, .cert-card:hover::before, .vvm-card:hover::before, 
+.stat-card:hover::before, .gm-card:hover::before, .gallery-card:hover::before {
+    opacity: 1;
+}
+
+/* 4. Floating Back to Top Button */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary-navy);
+    color: var(--accent-gold);
+    border: 1px solid var(--border-gold);
+    box-shadow: 0 8px 25px rgba(12, 29, 74, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 2400;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.lang-en .back-to-top-btn {
+    right: auto;
+    left: 2rem;
+}
+
+.back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+    background: var(--accent-gold);
+    color: var(--primary-navy);
+    border-color: var(--accent-gold);
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+}
+
+/* 5. Shimmer Badge & Metallic Sheen Animation */
+@keyframes goldShimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
 .section-tag {
     background-image: linear-gradient(110deg, rgba(200, 144, 10, 0.08) 0%, rgba(247, 215, 117, 0.3) 50%, rgba(200, 144, 10, 0.08) 100%);
     background-size: 200% 100%;
     animation: goldShimmer 6s infinite linear;
+}
+/* --- Sector Toggles --- */
+.sectors-toggle-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sector-card {
+    background: #ffffff;
+    border: 2px solid rgba(12, 29, 74, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 3.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    flex: 1;
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(12, 29, 74, 0.05);
+}
+
+.sector-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(12, 29, 74, 0.1);
+    border-color: rgba(200, 144, 10, 0.4);
+}
+
+.sector-card.active {
+    background: var(--primary-navy);
+    border-color: var(--accent-gold);
+    color: #ffffff;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(12, 29, 74, 0.2);
+}
+
+.sector-icon {
+    font-size: 4.5rem;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s ease;
+}
+
+.sector-card.active .sector-icon {
+    transform: scale(1.1);
+}
+
+.sector-card h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--primary-navy);
+    transition: color 0.4s ease;
+}
+
+.sector-card.active h3 {
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .sectors-toggle-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .sector-card {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
 }

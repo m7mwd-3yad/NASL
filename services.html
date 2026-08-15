@@ -32,7 +32,6 @@
                     <li><a href="index.html" class="nav-link" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
                     <li><a href="about.html" class="nav-link" data-ar="عن الشركة" data-en="About Us">عن الشركة</a></li>
                     <li><a href="services.html" class="nav-link active" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
-                    <li><a href="gallery.html" class="nav-link" data-ar="معرض الصور" data-en="Gallery">معرض الصور</a></li>
                     <li><a href="projects.html" class="nav-link" data-ar="المشاريع المنفذة" data-en="Projects">المشاريع المنفذة</a></li>
                     <li><a href="#partners" class="nav-link" data-ar="عملاؤنا" data-en="Our Clients">عملاؤنا</a></li>
                     <li><a href="contact.html" class="nav-link" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a></li>
@@ -83,9 +82,20 @@
                 <p class="section-subtitle" data-ar="انقر على أي خدمة للاطلاع على التفاصيل الكاملة والمعايير الفنية ومعرض الصور الميداني الخاص بها" data-en="Click any service to view full technical specifications, key highlights, and field photos gallery">انقر على أي خدمة للاطلاع على التفاصيل الكاملة والمعايير الفنية ومعرض الصور الميداني الخاص بها</p>
             </div>
 
+            <div class="sectors-toggle-container">
+                <div class="sector-card" data-target="contracting" onclick="filterServices('contracting', this)">
+                    <div class="sector-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+                    <h3 data-ar="قطاع المقاولات" data-en="Contracting Sector">قطاع المقاولات</h3>
+                </div>
+                <div class="sector-card" data-target="manufacturing" onclick="filterServices('manufacturing', this)">
+                    <div class="sector-icon"><i class="fa-solid fa-industry"></i></div>
+                    <h3 data-ar="قطاع التصنيع والإنتاج" data-en="Manufacturing Sector">قطاع التصنيع والإنتاج</h3>
+                </div>
+            </div>
+
             <div class="services-grid">
                 <!-- Service 1 -->
-                <div class="service-card" data-service="1">
+                <div class="service-card" data-service="1" data-category="contracting">
                     <div class="service-card-thumb">
                         <img src="imag/الحفر والترحيل/WhatsApp Image 2026-07-23 at 11.47.03 AM.jpeg" alt="أعمال الحفر والترحيل" loading="lazy">
                         <div class="thumb-overlay"></div>
@@ -104,7 +114,7 @@
                 </div>
 
                 <!-- Service 2 -->
-                <div class="service-card" data-service="2">
+                <div class="service-card" data-service="2" data-category="contracting">
                     <div class="service-card-thumb">
                         <img src="imag/توريد المواد صبيز وبيسكورس  ورمل وحجر/WhatsApp Image 2026-07-23 at 11.49.43 AM.jpeg" alt="أعمال توريد المواد" loading="lazy">
                         <div class="thumb-overlay"></div>
@@ -123,7 +133,7 @@
                 </div>
 
                 <!-- Service 3 -->
-                <div class="service-card" data-service="3">
+                <div class="service-card" data-service="3" data-category="contracting">
                     <div class="service-card-thumb">
                         <img src="imag/الاسفلت والطرق/WhatsApp Image 2026-07-23 at 11.49.08 AM.jpeg" alt="أعمال الأسفلت ودهانات الطرق" loading="lazy">
                         <div class="thumb-overlay"></div>
@@ -142,11 +152,11 @@
                 </div>
 
                 <!-- Service 4 -->
-                <div class="service-card" data-service="4">
+                <div class="service-card" data-service="4" data-category="contracting">
                     <div class="service-card-thumb">
-                        <img src="imag/كسارة/crusher.png" alt="إنتاج المواد - كسارة الأحجار" loading="lazy">
+                        <img src="imag/كسارة/8-4-1000x700.jpg.jpeg" alt="إنتاج المواد - كسارة الأحجار" loading="lazy">
                         <div class="thumb-overlay"></div>
-                        <span class="photo-count-badge" data-ar="📸 6 صور ميدانية" data-en="📸 6 Field Photos"><i class="fa-solid fa-camera"></i> 6 صور ميدانية</span>
+                        <span class="photo-count-badge" data-ar="📸 3 صور ميدانية" data-en="📸 3 Field Photos"><i class="fa-solid fa-camera"></i> 3 صور ميدانية</span>
                     </div>
                     <div class="service-card-body">
                         <div class="service-icon"><i class="fa-solid fa-mountain"></i></div>
@@ -161,7 +171,7 @@
                 </div>
 
                 <!-- Service 5 -->
-                <div class="service-card" data-service="5">
+                <div class="service-card" data-service="5" data-category="contracting">
                     <div class="service-card-thumb">
                         <img src="imag/الانابيب غاز وصرف صحي ومياة واتصالات وجميع المجالات/WhatsApp Image 2026-07-23 at 11.48.54 AM.jpeg" alt="أعمال البنية التحتية" loading="lazy">
                         <div class="thumb-overlay"></div>
@@ -180,7 +190,7 @@
                 </div>
 
                 <!-- Service 6 -->
-                <div class="service-card" data-service="6">
+                <div class="service-card" data-service="6" data-category="contracting">
                     <div class="service-card-thumb">
                         <img src="imag/اللاند سكيب والهارد سكيب/WhatsApp Image 2026-07-23 at 11.46.20 AM.jpeg" alt="الهاردسكيب والاندسكيب" loading="lazy">
                         <div class="thumb-overlay"></div>
@@ -199,7 +209,7 @@
                 </div>
 
                 <!-- Service 7 -->
-                <div class="service-card" data-service="7">
+                <div class="service-card" data-service="7" data-category="contracting">
                     <div class="service-card-thumb">
                         <img src="imag/الخرسانات/images (1).jpg.jpeg" alt="أعمال الخرسانات المسلحة" loading="lazy">
                         <div class="thumb-overlay"></div>
@@ -218,7 +228,7 @@
                 </div>
 
                 <!-- Service 8 -->
-                <div class="service-card" data-service="8">
+                <div class="service-card" data-service="8" data-category="contracting">
                     <div class="service-card-thumb">
                         <img src="imag/مستودعات ومعادن/WhatsApp Image 2026-07-23 at 11.49.33 AM.jpeg" alt="الهياكل المعدنية والمستودعات" loading="lazy">
                         <div class="thumb-overlay"></div>
@@ -237,7 +247,7 @@
                 </div>
 
                 <!-- Service 9 -->
-                <div class="service-card" data-service="9">
+                <div class="service-card" data-service="9" data-category="contracting">
                     <div class="service-card-thumb">
                         <img src="imag/الديكور والدهانات/WhatsApp Image 2026-07-23 at 11.46.45 AM.jpeg" alt="أعمال التشطيبات والديكور" loading="lazy">
                         <div class="thumb-overlay"></div>
@@ -256,11 +266,11 @@
                 </div>
 
                 <!-- Service 10 -->
-                <div class="service-card" data-service="10">
+                <div class="service-card" data-service="10" data-category="contracting">
                     <div class="service-card-thumb">
-                        <img src="imag/العزل والبولي يوريا/concrete-types-betonparszagros-min.jpg.jpeg" alt="أعمال العزل والبولي يوريا" loading="lazy">
+                        <img src="imag/العزل والبولي يوريا/d1047798-4a8d-4994-b1b0-204e60677578.jpg.jpeg" alt="أعمال العزل والبولي يوريا" loading="lazy">
                         <div class="thumb-overlay"></div>
-                        <span class="photo-count-badge" data-ar="📸 6 صور ميدانية" data-en="📸 6 Field Photos"><i class="fa-solid fa-camera"></i> 6 صور ميدانية</span>
+                        <span class="photo-count-badge" data-ar="📸 4 صور ميدانية" data-en="📸 4 Field Photos"><i class="fa-solid fa-camera"></i> 4 صور ميدانية</span>
                     </div>
                     <div class="service-card-body">
                         <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
@@ -269,6 +279,82 @@
                             حلول عزل متطورة ومقاومة للظروف الجوية الصعبة لعزل الأسطح والخزانات والأنفاق بتقنية البولي يوريا.
                         </p>
                         <button class="service-link-btn" onclick="openServiceModal(10)">
+                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 11 -->
+                <div class="service-card" data-service="11" data-category="manufacturing" style="display: none; opacity: 0;">
+                    <div class="service-card-thumb">
+                        <img src="imag/الديكور والدهانات/decor_new_1.jpg" alt="مصنع GRC - GRP - الفوم الحجري" loading="lazy">
+                        <div class="thumb-overlay"></div>
+                        <span class="photo-count-badge" data-ar="📸 قطاع التصنيع" data-en="📸 Manufacturing"><i class="fa-solid fa-industry"></i> قطاع التصنيع</span>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="fa-solid fa-industry"></i></div>
+                        <h3 class="service-title" data-ar="مصنع GRC - GRP - الفوم الحجري" data-en="GRC - GRP - Stone Foam Factory">مصنع GRC - GRP - الفوم الحجري</h3>
+                        <p class="service-desc" data-ar="تصنيع وتوريد منتجات GRC و GRP والفوم الحجري للواجهات والديكورات الخارجية بأعلى جودة." data-en="Manufacturing and supplying GRC, GRP, and stone foam products for facades and exterior decorations.">
+                            تصنيع وتوريد منتجات GRC و GRP والفوم الحجري للواجهات والديكورات الخارجية بأعلى جودة.
+                        </p>
+                        <button class="service-link-btn" onclick="openServiceModal(11)">
+                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 12 -->
+                <div class="service-card" data-service="12" data-category="manufacturing" style="display: none; opacity: 0;">
+                    <div class="service-card-thumb">
+                        <img src="imag/حدادة ونجارة/WhatsApp Image 2026-07-23 at 11.47.29 AM.jpeg" alt="أبواب WPC" loading="lazy">
+                        <div class="thumb-overlay"></div>
+                        <span class="photo-count-badge" data-ar="📸 قطاع التصنيع" data-en="📸 Manufacturing"><i class="fa-solid fa-industry"></i> قطاع التصنيع</span>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="fa-solid fa-door-closed"></i></div>
+                        <h3 class="service-title" data-ar="أبواب WPC" data-en="WPC Doors">أبواب WPC</h3>
+                        <p class="service-desc" data-ar="تصنيع أبواب WPC المقاومة للماء والعوامل الجوية بتصاميم عصرية ومتانة عالية." data-en="Manufacturing weather and water-resistant WPC doors with modern designs and high durability.">
+                            تصنيع أبواب WPC المقاومة للماء والعوامل الجوية بتصاميم عصرية ومتانة عالية.
+                        </p>
+                        <button class="service-link-btn" onclick="openServiceModal(12)">
+                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 13 -->
+                <div class="service-card" data-service="13" data-category="manufacturing" style="display: none; opacity: 0;">
+                    <div class="service-card-thumb">
+                        <img src="imag/الديكور والدهانات/decor_new_2.jpg" alt="أعمال خشبية" loading="lazy">
+                        <div class="thumb-overlay"></div>
+                        <span class="photo-count-badge" data-ar="📸 قطاع التصنيع" data-en="📸 Manufacturing"><i class="fa-solid fa-industry"></i> قطاع التصنيع</span>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="fa-solid fa-couch"></i></div>
+                        <h3 class="service-title" data-ar="أعمال خشبية" data-en="Wooden Works">أعمال خشبية</h3>
+                        <p class="service-desc" data-ar="تفصيل وتصنيع الأعمال الخشبية شاملة الأبواب، المطابخ، غرف النوم، والخزائن المبتكرة." data-en="Custom wooden works including doors, kitchens, bedrooms, and innovative closets.">
+                            تفصيل وتصنيع الأعمال الخشبية شاملة الأبواب، المطابخ، غرف النوم، والخزائن المبتكرة.
+                        </p>
+                        <button class="service-link-btn" onclick="openServiceModal(13)">
+                            <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 14 -->
+                <div class="service-card" data-service="14" data-category="manufacturing" style="display: none; opacity: 0;">
+                    <div class="service-card-thumb">
+                        <img src="imag/مستودعات ومعادن/WhatsApp Image 2026-07-23 at 11.49.33 AM.jpeg" alt="الألمونيوم" loading="lazy">
+                        <div class="thumb-overlay"></div>
+                        <span class="photo-count-badge" data-ar="📸 قطاع التصنيع" data-en="📸 Manufacturing"><i class="fa-solid fa-industry"></i> قطاع التصنيع</span>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-icon"><i class="fa-solid fa-window-maximize"></i></div>
+                        <h3 class="service-title" data-ar="الألمونيوم" data-en="Aluminum Works">الألمونيوم</h3>
+                        <p class="service-desc" data-ar="تصنيع وتركيب شبابيك وأبواب وواجهات الألمونيوم بأحدث القطاعات المعتمدة." data-en="Manufacturing and installing aluminum windows, doors, and facades using certified profiles.">
+                            تصنيع وتركيب شبابيك وأبواب وواجهات الألمونيوم بأحدث القطاعات المعتمدة.
+                        </p>
+                        <button class="service-link-btn" onclick="openServiceModal(14)">
                             <span data-ar="عرض التفاصيل ومعرض الصور" data-en="View Details & Gallery">عرض التفاصيل ومعرض الصور</span> <i class="fa-solid fa-arrow-left"></i>
                         </button>
                     </div>
@@ -296,7 +382,7 @@
                         <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
                         <li><a href="about.html" data-ar="عن الشركة" data-en="About Us">عن الشركة</a></li>
                         <li><a href="services.html" data-ar="مجالات الأعمال" data-en="Services">مجالات الأعمال</a></li>
-                        <li><a href="gallery.html" data-ar="معرض الصور" data-en="Gallery">معرض الصور</a></li>
+
                         <li><a href="projects.html" data-ar="المشاريع المنفذة" data-en="Projects">المشاريع المنفذة</a></li>
                         <li><a href="contact.html" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a></li>
                     </ul>
@@ -304,7 +390,7 @@
 
                 <div class="footer-contact">
                     <h4 data-ar="بيانات التواصل" data-en="Contact Detail">بيانات التواصل</h4>
-                    <p><i class="fa-solid fa-phone me-2"></i> 0559608789 / 0583579436</p>
+                    <p><i class="fa-solid fa-phone me-2"></i> <a href="https://api.whatsapp.com/send?phone=966559608789" dir="ltr" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">+966559608789</a> / <a href="https://api.whatsapp.com/send?phone=966505715620" dir="ltr" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">+966505715620</a></p>
                     <p><i class="fa-solid fa-envelope me-2"></i> info@naslbusiness.com</p>
                     <p><i class="fa-solid fa-globe me-2"></i> www.nslcompany.com</p>
                 </div>
