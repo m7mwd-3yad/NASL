@@ -2736,10 +2736,11 @@ body.menu-open {
         left: 0 !important;
         width: 100vw !important;
         height: 100vh !important;
+        height: 100dvh !important;
         background: rgba(3, 8, 22, 0.78) !important;
         backdrop-filter: blur(8px) !important;
         -webkit-backdrop-filter: blur(8px) !important;
-        z-index: 9998 !important;
+        z-index: 100 !important;
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.35s ease, visibility 0.35s ease;
@@ -2827,7 +2828,7 @@ body.menu-open {
         transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1), left 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
         border-left: 2px solid #f7d775 !important;
         box-shadow: -15px 0 50px rgba(0, 0, 0, 0.7) !important;
-        z-index: 9999 !important;
+        z-index: 500 !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: space-between !important;

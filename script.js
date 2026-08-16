@@ -444,12 +444,14 @@ if (langToggleBtn) {
 const mobileToggle = document.getElementById('mobileToggle');
 const mainNav = document.getElementById('mainNav');
 
-// Create backdrop dynamically if not present
-let navBackdrop = document.querySelector('.nav-backdrop');
+// Get or create backdrop element inside header to ensure correct stacking context
+let navBackdrop = document.getElementById('navBackdrop') || document.querySelector('.nav-backdrop');
 if (!navBackdrop) {
     navBackdrop = document.createElement('div');
     navBackdrop.className = 'nav-backdrop';
-    document.body.appendChild(navBackdrop);
+    navBackdrop.id = 'navBackdrop';
+    const headerEl = document.getElementById('header') || document.body;
+    headerEl.prepend(navBackdrop);
 }
 
 function openMobileMenu() {
