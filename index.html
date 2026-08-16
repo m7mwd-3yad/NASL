@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css?v=light20">
+    <link rel="stylesheet" href="styles.css?v=luxury100">
     
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,26 +23,50 @@
     <!-- Header / Navigation Bar -->
     <header class="site-header" id="header">
         <div class="container nav-container">
-            <a href="#hero" class="brand-logo" aria-label="شركة نسل الأعمال المحدودة">
+            <a href="index.html" class="brand-logo" aria-label="شركة نسل الأعمال المحدودة">
                 <img src="logo.png?v=3" alt="شركة نسل الأعمال المحدودة" class="site-logo-img">
             </a>
 
             <nav class="main-nav" id="mainNav">
+                <div class="mobile-nav-header">
+                    <div class="mobile-nav-brand">
+                        <img src="logo.png?v=3" alt="نسل الأعمال" class="mobile-nav-logo">
+                        <div class="mobile-brand-text">
+                            <span class="mobile-brand-name">نسل الأعمال</span>
+                            <span class="mobile-brand-sub">للتجارة والمقاولات</span>
+                        </div>
+                    </div>
+                    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close Menu">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+
                 <ul>
-                    <li><a href="index.html" class="nav-link active" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
-                    <li><a href="about.html" class="nav-link" data-ar="عن الشركة" data-en="About Us">عن الشركة</a></li>
-                    <li><a href="services.html" class="nav-link" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
-                    <li><a href="projects.html" class="nav-link" data-ar="المشاريع المنفذة" data-en="Projects">المشاريع المنفذة</a></li>
-                    <li><a href="#partners" class="nav-link" data-ar="عملاؤنا" data-en="Our Clients">عملاؤنا</a></li>
-                    <li><a href="contact.html" class="nav-link" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a></li>
+                    <li><a href="index.html" class="nav-link active"><i class="fa-solid fa-house nav-icon"></i><span class="nav-text" data-ar="الرئيسية" data-en="Home">الرئيسية</span></a></li>
+                    <li><a href="about.html" class="nav-link"><i class="fa-solid fa-building nav-icon"></i><span class="nav-text" data-ar="عن الشركة" data-en="About Us">عن الشركة</span></a></li>
+                    <li><a href="services.html" class="nav-link"><i class="fa-solid fa-cubes nav-icon"></i><span class="nav-text" data-ar="خدماتنا" data-en="Services">خدماتنا</span></a></li>
+                    <li><a href="projects.html" class="nav-link"><i class="fa-solid fa-city nav-icon"></i><span class="nav-text" data-ar="المشاريع المنفذة" data-en="Projects">المشاريع المنفذة</span></a></li>
+                    <li><a href="index.html#partners" class="nav-link"><i class="fa-solid fa-handshake nav-icon"></i><span class="nav-text" data-ar="عملاؤنا" data-en="Our Clients">عملاؤنا</span></a></li>
+                    <li><a href="contact.html" class="nav-link"><i class="fa-solid fa-envelope nav-icon"></i><span class="nav-text" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span></a></li>
                 </ul>
+
+                <div class="mobile-nav-footer">
+                    <a href="contact.html" class="btn btn-gold btn-block btn-glow">
+                        <i class="fa-solid fa-file-signature"></i> <span data-ar="طلب عرض سعر" data-en="Request Quote">طلب عرض سعر</span>
+                    </a>
+                    <div class="mobile-nav-contact">
+                        <a href="https://api.whatsapp.com/send?phone=966505715620" target="_blank" rel="noopener noreferrer" dir="ltr">
+                            <i class="fa-brands fa-whatsapp"></i> +966505715620
+                        </a>
+                    </div>
+                </div>
             </nav>
 
             <div class="header-actions">
                 <button class="lang-toggle-btn" id="langToggle" aria-label="Toggle Language">
                     <i class="fa-solid me-1 fa-globe"></i> <span id="langText">English</span>
                 </button>
-                <a href="#contact" class="btn btn-primary btn-sm btn-glow" data-ar="طلب عرض سعر" data-en="Request Quote">
+                <a href="contact.html" class="btn btn-primary btn-sm btn-glow header-quote-btn" data-ar="طلب عرض سعر" data-en="Request Quote">
                     <i class="fa-solid fa-file-signature"></i> <span>طلب عرض سعر</span>
                 </a>
                 <button class="mobile-toggle" id="mobileToggle" aria-label="Open Menu">
@@ -957,3 +981,6 @@
     <script src="script.js?v=light19"></script>
 </body>
 </html>
+
+
+

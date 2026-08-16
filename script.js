@@ -440,19 +440,73 @@ if (langToggleBtn) {
     });
 }
 
-// --- 6. Mobile Menu Navigation ---
+// --- 6. Mobile Menu Navigation & Backdrop Overlay ---
 const mobileToggle = document.getElementById('mobileToggle');
 const mainNav = document.getElementById('mainNav');
 
+// Create backdrop dynamically if not present
+let navBackdrop = document.querySelector('.nav-backdrop');
+if (!navBackdrop) {
+    navBackdrop = document.createElement('div');
+    navBackdrop.className = 'nav-backdrop';
+    document.body.appendChild(navBackdrop);
+}
+
+function openMobileMenu() {
+    if (!mainNav || !mobileToggle) return;
+    mainNav.classList.add('mobile-active');
+    navBackdrop.classList.add('active');
+    document.body.classList.add('menu-open');
+    const icon = mobileToggle.querySelector('i');
+    if (icon) {
+        icon.className = 'fa-solid fa-xmark';
+    }
+    mobileToggle.setAttribute('aria-expanded', 'true');
+}
+
+function closeMobileMenu() {
+    if (!mainNav || !mobileToggle) return;
+    mainNav.classList.remove('mobile-active');
+    navBackdrop.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    const icon = mobileToggle.querySelector('i');
+    if (icon) {
+        icon.className = 'fa-solid fa-bars';
+    }
+    mobileToggle.setAttribute('aria-expanded', 'false');
+}
+
 if (mobileToggle && mainNav) {
-    mobileToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('mobile-active');
+    mobileToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (mainNav.classList.contains('mobile-active')) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
     });
+
+    navBackdrop.addEventListener('click', closeMobileMenu);
+
+    // Drawer internal close button handler
+    const drawerCloseBtn = document.getElementById('mobileNavClose');
+    if (drawerCloseBtn) {
+        drawerCloseBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeMobileMenu();
+        });
+    }
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-            mainNav.classList.remove('mobile-active');
+            closeMobileMenu();
         });
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            closeMobileMenu();
+        }
     });
 }
 
