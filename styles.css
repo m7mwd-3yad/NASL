@@ -761,9 +761,9 @@ body.lang-en .hero-text-col {
 /* --- Page Header Banner (For Subpages) --- */
 .page-banner {
     position: relative;
-    padding: 6.25rem 0 2.25rem;
-    background: linear-gradient(135deg, #09173d 0%, #0c2054 50%, #06112e 100%);
-    border-bottom: 2px solid rgba(247, 215, 117, 0.25);
+    padding: 11rem 0 5rem;
+    background: linear-gradient(180deg, #eef3f9 0%, #f5f7fb 100%);
+    border-bottom: 1px solid rgba(12, 29, 74, 0.08);
     overflow: hidden;
 }
 
@@ -785,13 +785,13 @@ body.lang-en .hero-text-col {
 .page-banner-glow-1 {
     top: -200px;
     right: -100px;
-    background: rgba(247, 215, 117, 0.12);
+    background: rgba(12, 29, 74, 0.08);
 }
 
 .page-banner-glow-2 {
     bottom: -200px;
     left: -100px;
-    background: rgba(16, 35, 83, 0.4);
+    background: rgba(200, 144, 10, 0.1);
 }
 
 .page-banner-content {
@@ -800,36 +800,35 @@ body.lang-en .hero-text-col {
 }
 
 .page-title {
-    font-size: clamp(1.75rem, 3.2vw + 0.5rem, 2.65rem);
+    font-size: clamp(1.6rem, 3.5vw + 0.5rem, 2.75rem);
     font-weight: 900;
-    margin-bottom: 0.65rem;
-    line-height: 1.25;
-    color: #ffffff;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: var(--primary-navy);
 }
 
 .page-subtitle {
-    font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.15rem;
+    color: var(--text-secondary);
     max-width: 750px;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 .breadcrumb {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.35rem 1.1rem;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(247, 215, 117, 0.3);
+    padding: 0.4rem 1.1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-glass);
     border-radius: var(--radius-full);
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 1rem;
-    backdrop-filter: blur(8px);
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
 }
 
 .breadcrumb a {
-    color: #f7d775;
+    color: var(--accent-gold);
     font-weight: 600;
 }
 
@@ -1824,6 +1823,14 @@ body.lang-en .legal-details {
 }
 
 /* --- Contact & Form --- */
+.contact-section .grid-2-col {
+    align-items: flex-start;
+}
+
+.contact-info-block {
+    padding-top: 0.25rem;
+}
+
 .contact-methods {
     display: flex;
     flex-direction: column;
@@ -3004,8 +3011,9 @@ body.menu-open {
 
 /* -- Small Mobile Phones (480px and below) -- */
 @media (max-width: 480px) {
-    .section-padding { padding: 2.75rem 0; }
-    .page-banner { padding: 5.25rem 0 1.75rem !important; }
+    .container { padding: 0 1rem; }
+    .section-padding { padding: 3.25rem 0; }
+    .page-banner { padding: 7.5rem 0 2.5rem; }
     .section-subtitle { font-size: 0.88rem; }
     .header-actions .btn-sm,
     .header-actions .header-quote-btn { display: none; }
