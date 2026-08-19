@@ -234,6 +234,118 @@ const servicesData = {
             { src: "imag/العزل والبولي يوريا/images (1).jpg.jpeg", titleAr: "طبقات العزل الحامي من التسربات", titleEn: "Protective insulation layer" },
             { src: "imag/العزل والبولي يوريا/images (2).jpg.jpeg", titleAr: "اختبار كفاءة وسماكة مادة العزل", titleEn: "Waterproofing quality inspection" }
         ]
+    },
+    11: {
+        titleAr: "مصنع GRC - GRP - الفوم الحجري",
+        titleEn: "GRC - GRP - Stone Foam Factory",
+        descAr: "مصنع متخصص في تصميم وتصنيع وتوريد كافة منتجات الـ GRC والـ GRP والفوم الحجري للواجهات الخارجية والديكورات المعمارية. نقدم كورنيشات، أعمدة رومانية، تيجان، إطارات شبابيك، مشربيات، وتكسيات جدارية بأعلى معايير الجودة والمتانة المقاومة للعوامل الجوية.",
+        descEn: "Specialized manufacturing plant producing premium GRC, GRP, and Stone Foam architectural components for building facades. Offering cornices, Roman columns, capitals, window trims, ornate mashrabiya, and weather-resistant wall cladding.",
+        highlightsAr: [
+            "تصميم وتصنيع واجهات GRC الكلاسيكية والعصرية",
+            "إنتاج الأعمدة الرومانية والكرانيش والبرامق وإطارات النوافذ",
+            "تكسيات الفوم الحجري ومكونات GRP المقاومة للمياه والطقس",
+            "دقة فائقة في القوالب الخرسانية والألياف الزجاجية المزخرفة"
+        ],
+        highlightsEn: [
+            "Design & fabrication of classic & modern GRC facades",
+            "Production of Roman columns, cornices & window surrounds",
+            "Water & weather-resistant GRP & Stone Foam cladding",
+            "High-precision architectural fiberglass & GRC molds"
+        ],
+        images: [
+            { src: "imag/GRC/grc_1.jpg", titleAr: "واجهات وتكسيات GRC زخرفية كلاسيكية", titleEn: "Classic decorative GRC facade cladding & cornices" },
+            { src: "imag/GRC/grc_2.png", titleAr: "أعمدة وفراندات GRC فاخرة للفلل والمباني", titleEn: "Luxury GRC columns & arched balcony facade" },
+            { src: "imag/GRC/grc_3.jpg", titleAr: "تصميم واجهة معمارية متكاملة بمنتجات GRC", titleEn: "Full architectural building elevation with GRC products" },
+            { src: "imag/GRC/grc_4.png", titleAr: "واجهة مدخل قصر بكولونات وأعمدة رومانية GRC", titleEn: "Classic villa facade with Roman GRC columns" },
+            { src: "imag/GRC/grc_factory_5.png", titleAr: "خطوط إنتاج وصب وقوالب الـ GRC داخل المصنع", titleEn: "GRC factory mixing, spraying & molding process" }
+        ]
+    },
+    12: {
+        titleAr: "تصنيع أبواب WPC المقاومة للمياه والحرارة",
+        titleEn: "WPC Doors Manufacturing",
+        descAr: "تصنيع وإنتاج أبواب WPC (الخشب البلاستيكي المدمج) المصممة خصيصاً للمقاومة الفائقة للمياه، الرطوبة، والحشرات مع عزله التام للحرارة والصوت وتصاميمه العصرية المتنوعة.",
+        descEn: "Manufacturing high-performance Wood Plastic Composite (WPC) doors engineered for 100% water, moisture, and termite resistance with excellent thermal and acoustic insulation.",
+        highlightsAr: [
+            "مقاومة كاملة للمياه والتعفن والرطوبة",
+            "تصاميم وديكورات عصرية تناسب كافة المشاريع",
+            "عزل صوتي وحراري متقدم ومتانة عالية",
+            "ضمان طويل الأجل على المواد والتركيب"
+        ],
+        highlightsEn: [
+            "100% waterproof, rot, and moisture resistant",
+            "Modern aesthetic designs for residential & commercial sites",
+            "High acoustic & thermal insulation efficiency",
+            "Long-term structural product guarantee"
+        ],
+        images: [
+            { src: "imag/doors/wpc_doors_models.jpg", titleAr: "تشكيلة تصاميم وتشكيلات أبواب WPC الفاخرة", titleEn: "WPC luxury door design collection" },
+            { src: "imag/doors/wpc_door_grey.jpg", titleAr: "تصميم باب WPC رمادي عالي العزل والجمال", titleEn: "Modern grey WPC insulated door" }
+        ]
+    },
+    13: {
+        titleAr: "مصنع الأعمال الخشبية والديكور الداخلي",
+        titleEn: "Wooden Works & Interior Fit-out Factory",
+        descAr: "مصنع متكامل لتفصيل وتصنيع أرقى الأعمال الخشبية والموبيليات للمشاريع السكنية والتجارية والفندقية. يضم أربعة خطوط إنتاج تخصصية: الأبواب الخشبية الفاخرة، المطابخ الحديثة، غرف النوم المصممة حسب الطلب، وخزائن الملابس وغرف الدريسينج المبتكرة.",
+        descEn: "Full-scale custom woodwork manufacturing plant covering four specialized production lines: luxury wooden doors, modern custom kitchens, master bedrooms, and innovative walk-in closets & dressing rooms.",
+        subcategories: [
+            { id: "all", nameAr: "كافة الأعمال", nameEn: "All Works", icon: "fa-border-all" },
+            { id: "doors", nameAr: "الأبواب الخشبية", nameEn: "Doors", icon: "fa-door-open" },
+            { id: "kitchens", nameAr: "المطابخ العصرية", nameEn: "Kitchens", icon: "fa-kitchen-set" },
+            { id: "bedrooms", nameAr: "غرف النوم", nameEn: "Bedrooms", icon: "fa-bed" },
+            { id: "cabinets", nameAr: "الخزائن والدريسينج", nameEn: "Cabinets & Dressing", icon: "fa-boxes-stacked" }
+        ],
+        highlightsAr: [
+            "تصنيع الأبواب الخشبية الفاخرة (قشرة طبيعية، CNC، وتصاميم مودرن)",
+            "تفصيل وتجهيز المطابخ الحديثة بأجود الخامات والمفصلات الهيدروليكية",
+            "تصميم وتنفيذ غرف النوم الرئيسية والفرعية بأعلى مستويات الإتقان",
+            "تفصيل خزائن الملابس، الدريسينج روم، والتكسيات الجدارية الخشبية"
+        ],
+        highlightsEn: [
+            "Manufacturing luxury wooden doors with natural veneer & CNC carvings",
+            "Custom modern kitchen design with premium soft-close fittings",
+            "Bespoke master & guest bedroom sets engineered for elegance",
+            "Custom walk-in closets, dressing room systems & decorative wall cladding"
+        ],
+        images: [
+            { cat: "kitchens", src: "imag/woodworks/kitchen_modern_grey.jpg", titleAr: "تفصيل وتجهيز مطابخ عصرية باللون الرمادي والرخام الفاخر", titleEn: "Modern grey custom kitchen with luxury quartz countertop" },
+            { cat: "kitchens", src: "category/WhatsApp Image 2026-08-03 at 10.20.17 AM.jpeg", titleAr: "تصميم وتنفيذ المطابخ الخشبية الحديثة", titleEn: "Modern wooden kitchen design & installation" },
+            { cat: "kitchens", src: "category/WhatsApp Image 2026-08-03 at 10.20.18 AM.jpeg", titleAr: "مطابخ عصرية بتشطيبات راقية", titleEn: "High-end kitchen cabinets" },
+            { cat: "doors", src: "imag/doors/door_wood_1.jpg", titleAr: "تصنيع أبواب خشبية فاخرة بتصاميم هندسية عصرية", titleEn: "Luxury geometric wooden doors" },
+            { cat: "doors", src: "imag/doors/door_wood_2.jpg", titleAr: "أبواب خشبية مودرن مدمجة بقواطع وتفريغات أنيقة", titleEn: "Modern wooden doors with sleek patterns" },
+            { cat: "doors", src: "imag/doors/door_wood_3.jpg", titleAr: "أبواب خشبية مقوسة فاخرة للمداخل والقصور", titleEn: "Luxury arched entrance wooden doors" },
+            { cat: "doors", src: "imag/doors/door_wood_4.jpg", titleAr: "أبواب داخلية بيضاء كلاسيكية بزخارف علوية مميزة", titleEn: "Classic white double doors with ornate arch" },
+            { cat: "cabinets", src: "imag/woodworks/cabinet_dressing_1.jpg", titleAr: "تفصيل غرف دريسينج روم خشبية مفتوحة بتقسيمات ذكية وإضاءة LED", titleEn: "Open wooden walk-in closet with smart organizers & LED" },
+            { cat: "cabinets", src: "imag/woodworks/cabinet_dressing_2.jpg", titleAr: "تصميم خزائن ملابس بيضاء مدمجة مع أرفف زجاجية عصرية", titleEn: "Modern white built-in wardrobe with black glass display shelving" },
+            { cat: "cabinets", src: "imag/woodworks/cabinet_dressing_3.jpg", titleAr: "خزائن ملابس ودريسينج زجاجية فاخرة بإضاءة داخلية متكاملة", titleEn: "Luxury L-shaped glass illuminated wardrobe & dressing room" },
+            { cat: "bedrooms", src: "imag/woodworks/bedroom_set_1.jpg", titleAr: "تفصيل وتصنيع غرف نوم رئيسية متكاملة بدولاب سحاب وتسريحة", titleEn: "Custom master bedroom set with sliding wardrobe & vanity" },
+            { cat: "bedrooms", src: "imag/woodworks/bedroom_set_2.jpg", titleAr: "تصميم وتنفيذ غرف نوم فندقية عصرية بتشطيبات راقية", titleEn: "Modern luxury hotel-style bedroom woodwork" },
+            { cat: "bedrooms", src: "imag/woodworks/bedroom_set_3.jpg", titleAr: "سرير وتكسيات جدارية خشبية مع تنجيد هندسي فخم", titleEn: "Bespoke bed set with geometric upholstered wall panel" },
+            { cat: "bedrooms", src: "imag/woodworks/bedroom_tv_decor.jpg", titleAr: "تفصيل وتجهيز أثاث وتكسيات الجدران وغرف النوم", titleEn: "Custom bedroom & living wall units and furniture" }
+        ]
+    },
+    14: {
+        titleAr: "مصنع تشكيل وتركيب الألمونيوم والواجهات",
+        titleEn: "Aluminum Works & Glass Facades Factory",
+        descAr: "تصنيع وتركيب شبكات النوافذ، الأبواب، الواجهات الزجاجية والهياكل الألمونيوم بأحدث القطاعات المعتمدة والعازلة للحرارة والغبار والصوت.",
+        descEn: "Manufacturing and installing aluminum windows, doors, structural glass curtain walls, and facade framing using thermal-break certified profiles.",
+        highlightsAr: [
+            "تصنيع شبابيك وأبواب الألمونيوم بقطاعات معتمدة",
+            "تركيب الواجهات الزجاجية والواجهات المستمرة (Curtain Wall)",
+            "عزل ممتاز للحرارة والضوضاء والأتربة",
+            "إكسسوارات عالية الجودة ومتانة هيكلية"
+        ],
+        highlightsEn: [
+            "Certified thermal & standard aluminum window & door systems",
+            "Structural glass curtain wall & facade fitting",
+            "Superior thermal, sound, and dust insulation",
+            "High-durability hardware and robust frames"
+        ],
+        images: [
+            { src: "imag/aluminum/alum_2_door_glass.png", titleAr: "باب ألمونيوم بزجاج مزخرف للمداخل الفاخرة", titleEn: "Decorative frosted glass aluminum entrance door" },
+            { src: "imag/aluminum/alum_3_install.png", titleAr: "تركيب وتثبيت هياكل الألمونيوم بالموقع", titleEn: "Aluminum frame installation & fixing on site" },
+            { src: "imag/aluminum/alum_4_curtain_wall.png", titleAr: "واجهة ستائرية زجاجية شفافة - Curtain Wall", titleEn: "Structural glass curtain wall with aluminum frames" },
+            { src: "imag/aluminum/alum_5_extra.png", titleAr: "تفاصيل قطاعات الألمونيوم المعتمدة المركبة", titleEn: "Certified aluminum profile sections & assembly" }
+        ]
     }
 };
 
@@ -258,12 +370,27 @@ function openServiceModal(serviceId) {
 
     let galleryHtml = '';
     if (service.images && service.images.length > 0) {
+        let tabsHtml = '';
+        if (service.subcategories && service.subcategories.length > 0) {
+            tabsHtml = `
+                <div class="modal-tabs-container">
+                    ${service.subcategories.map((sub, idx) => `
+                        <button class="modal-tab-btn ${idx === 0 ? 'active' : ''}" onclick="filterModalGallery('${sub.id}', this)">
+                            <i class="fa-solid ${sub.icon || 'fa-circle-check'}"></i>
+                            <span>${isEn ? sub.nameEn : sub.nameAr}</span>
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+        }
+
         let imgs = service.images.map(imgObj => {
             const imgTitle = isEn ? imgObj.titleEn : imgObj.titleAr;
             const safeTitle = imgTitle.replace(/'/g, "\\'");
             const safeTag = title.replace(/'/g, "\\'");
+            const imgCat = imgObj.cat || 'all';
             return `
-                <div class="modal-gallery-item" onclick="openLightbox('${imgObj.src}', '${safeTitle}', '${safeTag}')">
+                <div class="modal-gallery-item" data-mcat="${imgCat}" onclick="openLightbox('${imgObj.src}', '${safeTitle}', '${safeTag}')">
                     <img src="${imgObj.src}" alt="${imgTitle}" loading="lazy">
                     <div class="modal-gallery-overlay">
                         <i class="fa-solid fa-expand"></i>
@@ -277,6 +404,7 @@ function openServiceModal(serviceId) {
                 <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
                     <i class="fa-solid fa-images"></i> ${isEn ? 'Field Work Gallery & Real Photos:' : 'معرض الصور الميدانية الحية للقطاع:'}
                 </h4>
+                ${tabsHtml}
                 <div class="modal-gallery-grid">
                     ${imgs}
                 </div>
@@ -308,6 +436,26 @@ function openServiceModal(serviceId) {
     `;
 
     modal.classList.add('active');
+}
+
+function filterModalGallery(cat, btn) {
+    const parentTabs = btn.closest('.modal-tabs-container');
+    if (parentTabs) {
+        parentTabs.querySelectorAll('.modal-tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+    const galleryGrid = document.querySelector('.modal-gallery-grid');
+    if (!galleryGrid) return;
+    const items = galleryGrid.querySelectorAll('.modal-gallery-item');
+    items.forEach(item => {
+        const itemCat = item.getAttribute('data-mcat') || 'all';
+        if (cat === 'all' || itemCat === cat) {
+            item.style.display = 'block';
+            item.style.animation = 'fadeIn 0.3s ease forwards';
+        } else {
+            item.style.display = 'none';
+        }
+    });
 }
 
 function closeServiceModal() {

@@ -2148,6 +2148,83 @@ body.lang-en .photo-count-badge {
     gap: 0.75rem;
 }
 
+/* --- Modal Subcategory Tabs --- */
+.modal-tabs-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    background: rgba(12, 29, 74, 0.04);
+    padding: 0.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(12, 29, 74, 0.08);
+}
+
+.modal-tab-btn {
+    background: #ffffff;
+    border: 1px solid rgba(12, 29, 74, 0.1);
+    color: var(--primary-navy);
+    padding: 0.45rem 0.95rem;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    transition: all 0.25s ease;
+    font-family: inherit;
+}
+
+.modal-tab-btn i {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+}
+
+.modal-tab-btn:hover {
+    background: var(--gold-badge-bg);
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+.modal-tab-btn.active {
+    background: var(--primary-navy);
+    color: #ffffff;
+    border-color: var(--primary-navy);
+    box-shadow: 0 4px 12px rgba(12, 29, 74, 0.2);
+}
+
+.modal-tab-btn.active i {
+    color: var(--accent-gold);
+}
+
+/* Service Card Subchips */
+.service-subchips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.service-subchip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: rgba(200, 144, 10, 0.08);
+    color: var(--primary-navy);
+    border: 1px solid rgba(200, 144, 10, 0.25);
+    border-radius: 6px;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.service-subchip i {
+    color: var(--accent-gold);
+    font-size: 0.75rem;
+}
+
 .modal-gallery-item {
     position: relative;
     height: 110px;
